@@ -130,16 +130,16 @@ class RecruitmentWorkflowIntegrationTest {
         position.setDescription("测试 WorkflowService 岗位流转");
         workflowService.initializePositionAsDraft(position);
         position.setDepartment("技术部");
-        position = positionRepository.save(position);
+        Position saved = positionRepository.save(position);
 
-        workflowService.transitionPositionStatus(position, PositionStatus.PENDING);
-        assertEquals(PositionStatus.PENDING, position.getStatus());
+        workflowService.transitionPositionStatus(saved, PositionStatus.PENDING);
+        assertEquals(PositionStatus.PENDING, saved.getStatus());
 
-        workflowService.transitionPositionStatus(position, PositionStatus.PUBLISHED);
-        assertEquals(PositionStatus.PUBLISHED, position.getStatus());
+        workflowService.transitionPositionStatus(saved, PositionStatus.PUBLISHED);
+        assertEquals(PositionStatus.PUBLISHED, saved.getStatus());
 
         assertThrows(BusinessException.class, () ->
-                workflowService.transitionPositionStatus(position, PositionStatus.DRAFT));
+                workflowService.transitionPositionStatus(saved, PositionStatus.DRAFT));
     }
 
     private void loginAs(User user) {
