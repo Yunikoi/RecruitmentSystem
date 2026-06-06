@@ -120,6 +120,12 @@ class RecruitmentWorkflowIntegrationTest {
                         .findFirst()
                         .orElseThrow());
 
+        app.setAiInterviewScore(80);
+        app.setAiInterviewPass(true);
+        app.setAiInterviewFeedback("测试：已完成 AI 初试");
+        app.setStage(ApplicationStage.AI_INTERVIEW);
+        applicationRepository.save(app);
+
         StageUpdateRequest req = new StageUpdateRequest();
         req.setStage(ApplicationStage.BUSINESS_INTERVIEW);
         ApplicationResponse updated = applicationService.advanceStage(app.getId(), req);
@@ -144,6 +150,24 @@ class RecruitmentWorkflowIntegrationTest {
 
         assertThrows(BusinessException.class, () ->
                 workflowService.transitionPositionStatus(saved, PositionStatus.DRAFT));
+    }
+
+    @Test
+    void cannotEnterBusinessInterview_withoutAiInterviewCompleted() {
+        Application app = applicationRepository.findAll().stream()
+                .filter(a -> a.getStage() == ApplicationStage.SCREENING)
+                .findFirst()
+                .orElseGet(() -> {
+                    Application fallback = applicationRepository.findAll().stream().findFirst().orElseThrow();
+                    fallback.setStage(ApplicationStage.SCREENING);
+                    fallback.setAiInterviewScore(null);
+                    return applicationRepository.save(fallback);
+                });
+        app.setAiInterviewScore(null);
+        applicationRepository.save(app);
+
+        assertThrows(BusinessException.class, () ->
+                workflowService.transitionApplicationStage(app, ApplicationStage.BUSINESS_INTERVIEW, "TEST"));
     }
 
     private void loginAs(User user) {

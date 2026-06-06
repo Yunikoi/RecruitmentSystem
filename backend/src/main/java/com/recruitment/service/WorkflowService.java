@@ -108,6 +108,7 @@ public class WorkflowService {
             Position position = positionRepository.findById(app.getPositionId())
                     .orElseThrow(() -> new BusinessException(404, "岗位不存在"));
             assertStageInWorkflow(position, target);
+            assertAiInterviewPrerequisite(app, position, target);
         }
         app.setStage(target);
         app.setStageUpdatedAt(LocalDateTime.now());
@@ -134,6 +135,24 @@ public class WorkflowService {
                 && target != ApplicationStage.HIRED) {
             throw new BusinessException(400,
                     "阶段「" + targetStep + "」不在岗位「" + position.getTitle() + "」的工作流中");
+        }
+    }
+
+    /**
+     * 工作流含 AI 初试时，进入业务面及之后阶段须已完成 AI 初试（有 aiInterviewScore）。
+     */
+    private void assertAiInterviewPrerequisite(Application app, Position position, ApplicationStage target) {
+        List<String> workflow = getWorkflow(position);
+        if (!workflow.contains("AI_INTERVIEW")) {
+            return;
+        }
+        if (target == ApplicationStage.BUSINESS_INTERVIEW
+                || target == ApplicationStage.HR_INTERVIEW
+                || target == ApplicationStage.OFFER
+                || target == ApplicationStage.HIRED) {
+            if (app.getAiInterviewScore() == null) {
+                throw new BusinessException(400, "须先完成 AI 初试，方可安排/进入后续人工面试");
+            }
         }
     }
 }

@@ -88,12 +88,12 @@
             <el-button link type="info" v-if="isInterviewer || isAdmin" @click="openEvaluation(row)">提交面评</el-button>
           <template v-if="isAdmin">
             <el-button link type="success" v-if="row.stage === 'SCREENING'" @click="advance(row, 'AI_INTERVIEW')">进AI面</el-button>
-            <el-button link type="primary" v-if="row.stage === 'AI_INTERVIEW'" @click="advance(row, 'BUSINESS_INTERVIEW')">进业务面</el-button>
+            <el-button link type="primary" v-if="row.stage === 'AI_INTERVIEW' && row.aiInterviewScore != null" @click="advance(row, 'BUSINESS_INTERVIEW')">进业务面</el-button>
             <el-button link type="warning" v-if="row.stage === 'BUSINESS_INTERVIEW'" @click="advance(row, 'HR_INTERVIEW')">进HR面</el-button>
             <el-button link type="success" v-if="row.stage === 'HR_INTERVIEW'" @click="advance(row, 'OFFER')">发Offer</el-button>
             <el-button link type="success" v-if="row.stage === 'OFFER'" @click="advance(row, 'HIRED')">确认录用</el-button>
             <el-button link type="danger" @click="reject(row)">淘汰</el-button>
-            <el-button link @click="openSchedule(row)">安排面试</el-button>
+            <el-button link @click="openSchedule(row)" :disabled="!canScheduleInterview(row)">安排面试</el-button>
           </template>
         </template>
       </el-table-column>
@@ -308,9 +308,19 @@ const loadData = async () => {
 }
 
 const advance = async (row, stage) => {
+  if (stage === 'BUSINESS_INTERVIEW' && row.aiInterviewScore == null) {
+    return ElMessage.warning('须先完成 AI 初试后再进入业务面')
+  }
   await updateStage(row.id, { stage })
   ElMessage.success('阶段已更新')
   loadData()
+}
+
+/** 工作流含 AI 初试时，未完成 AI 不可安排人工面试 */
+const canScheduleInterview = (row) => {
+  if (['REJECTED', 'HIRED', 'APPLIED'].includes(row.stage)) return false
+  if (row.aiInterviewScore != null) return true
+  return ['BUSINESS_INTERVIEW', 'HR_INTERVIEW', 'OFFER'].includes(row.stage)
 }
 
 const reject = async (row) => {
@@ -410,6 +420,9 @@ const clearResumePreview = () => {
 }
 
 const submitSchedule = async () => {
+  if (!canScheduleInterview(currentRow.value)) {
+    return ElMessage.warning('须先完成 AI 初试后再安排人工面试')
+  }
   if (!scheduleForm.scheduledAt) {
     ElMessage.warning('请选择面试时间')
     return

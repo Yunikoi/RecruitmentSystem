@@ -102,6 +102,10 @@ public class DataInitializer {
         demo.setMatchScore(88);
         demo.setMatchHighlights("核心匹配：Java、Spring、微服务");
         demo.setMatchRisks("");
+        demo.setAiInterviewScore(86);
+        demo.setAiInterviewPass(true);
+        demo.setAiInterviewFeedback("表达清晰，Java/Spring 基础扎实，项目描述完整，建议进入业务面进一步考察。");
+        demo.setAiInterviewAt(LocalDateTime.now().minusDays(1));
         demo.setStageUpdatedAt(LocalDateTime.now());
         applicationRepository.save(demo);
 
@@ -121,18 +125,7 @@ public class DataInitializer {
         demo2.setStageUpdatedAt(LocalDateTime.now());
         applicationRepository.save(demo2);
 
-        Interview pendingInvite = new Interview();
-        pendingInvite.setApplicationId(demo2.getId());
-        pendingInvite.setInterviewerId(interviewer.getId());
-        pendingInvite.setInterviewerName(interviewer.getDisplayName());
-        pendingInvite.setType("BUSINESS");
-        pendingInvite.setScheduledAt(LocalDateTime.now().plusDays(5).withHour(15).withMinute(0));
-        pendingInvite.setLocation("3号会议室 / 线上腾讯会议");
-        pendingInvite.setStatus("PENDING");
-        pendingInvite.setInvitedById(admin.getId());
-        pendingInvite.setInvitedByName(admin.getDisplayName());
-        pendingInvite.setExpireAt(LocalDateTime.now().plusDays(3));
-        interviewRepository.save(pendingInvite);
+        // 前端岗：未完成 AI 初试，不预置业务面邀请（须候选人先完成 AI 语音初试）
 
         Interview scheduled = new Interview();
         scheduled.setApplicationId(demo.getId());
