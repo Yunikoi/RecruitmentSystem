@@ -1,0 +1,24 @@
+﻿{
+"assembly": [
+"MarkedRenderer.dll"
+],
+"css": [
+"Resources/highlight.css",
+"Resources/marked-renderer.css"
+],
+"javascript": [
+"Resources/MarkedRendererCellType.js",
+"Resources/highlight.min.js",
+"Resources/marked.min.js"
+],
+"serverApiAssembly": [],
+"image": "Resources/PluginLogo.png",
+"description": "基于 marked.js + highlight.js 的 Markdown 渲染器",
+"name": "Markdown 渲染器",
+"pluginType": "cellType",
+"guid": "d63bdf82-52dc-4274-8bb6-9f16f37a7ceb",
+"version": "1.3.0.0",
+"dependenceVersion": "11.0.2.0",
+"bundleJavaScript": true,
+"bundleCSS": true
+}

@@ -1,0 +1,1236 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 48.0
+        }
+      },
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "2": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "5": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "6": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "7": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "8": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "9": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "10": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "11": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "12": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "13": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "14": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "15": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "16": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "17": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "18": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "19": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "20": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "21": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "22": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "23": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "24": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 26
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "2": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "5": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "6": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "7": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "8": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "9": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "10": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "11": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "12": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "13": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "14": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      }
+    },
+    "Count": 15
+  },
+  "AttachInfos": {
+    "0,0": {
+      "CellType": {
+        "$type": "Forguncy.FlexLayoutContainer, ServerDesignerCommon",
+        "JustifyContent": "space-between",
+        "AlignItems": "stretch",
+        "AlignContent": "stretch",
+        "RowGap": 8,
+        "ColumnGap": 8,
+        "UIPermissions": [
+          {
+            "Scope": 2,
+            "AllowRoles": [
+              "FGC_Anonymous"
+            ]
+          },
+          {
+            "Scope": 1,
+            "AllowRoles": [
+              "FGC_Anonymous"
+            ]
+          },
+          {
+            "Scope": 4,
+            "AllowRoles": [
+              "FGC_Anonymous"
+            ]
+          }
+        ],
+        "Name": "Container1",
+        "Padding": {
+          "Left": 16.0,
+          "Right": 16.0
+        },
+        "Children": [
+          {
+            "$type": "Forguncy.FlexContainerItem, ServerDesignerCommon",
+            "Grow": 1.0,
+            "Shrink": 1.0,
+            "Width": 134.0,
+            "Height": 20.0,
+            "Name": "FlexLayoutContainer1",
+            "AttachedInfo": {
+              "CellType": {
+                "$type": "Forguncy.FlexLayoutContainer, ServerDesignerCommon",
+                "AlignItems": "stretch",
+                "AlignContent": "stretch",
+                "RowGap": 8,
+                "ColumnGap": 8,
+                "UIPermissions": [
+                  {
+                    "Scope": 2,
+                    "AllowRoles": [
+                      "FGC_Anonymous"
+                    ]
+                  },
+                  {
+                    "Scope": 1,
+                    "AllowRoles": [
+                      "FGC_Anonymous"
+                    ]
+                  },
+                  {
+                    "Scope": 4,
+                    "AllowRoles": [
+                      "FGC_Anonymous"
+                    ]
+                  }
+                ],
+                "Children": [
+                  {
+                    "$type": "Forguncy.FlexContainerItem, ServerDesignerCommon",
+                    "Width": 20.0,
+                    "Height": 30.0,
+                    "Name": "Image",
+                    "AttachedInfo": {
+                      "CellType": {
+                        "$type": "Forguncy.ImageCellType, ServerDesignerCommon",
+                        "ImagePath": "Application/157_historyvis_1.svg",
+                        "BuiltIn": true,
+                        "Color": "#FF828282"
+                      }
+                    },
+                    "StyleInfo": {
+                      "FontFamily": "Body"
+                    }
+                  },
+                  {
+                    "$type": "Forguncy.FlexContainerItem, ServerDesignerCommon",
+                    "Grow": 1.0,
+                    "Shrink": 1.0,
+                    "Width": 74.0,
+                    "Height": 30.0,
+                    "Name": "Text",
+                    "AttachedInfo": {},
+                    "StyleInfo": {
+                      "FontFamily": "Body",
+                      "FontSize": 16.0,
+                      "FontWeight": "Bold",
+                      "HorizontalAlignment": 0,
+                      "TextIndent": 5,
+                      "Foreground": "#FF6B6B6B"
+                    },
+                    "Value": "审批记录"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$type": "Forguncy.FlexContainerItem, ServerDesignerCommon",
+            "Grow": 1.0,
+            "Shrink": 1.0,
+            "Width": 100.0,
+            "Height": 30.0,
+            "Name": "Hyperlink",
+            "AttachedInfo": {
+              "CellType": {
+                "$type": "Forguncy.HyperlinkCellType, ServerDesignerCommon",
+                "CommandList": [
+                  {
+                    "$type": "Forguncy.Model.ShowPopupCommand, ServerDesignerCommon",
+                    "PopupDisplayMode": 4,
+                    "DrawerDirection": 3,
+                    "ShowDrawerHeader": true,
+                    "PageName": "FGC_流程追踪",
+                    "PassValues": [
+                      {
+                        "Source": {
+                          "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+                          "SerializeProperty": "=FGC_审批记录!最终的流程实例ID"
+                        },
+                        "TargetCell": {
+                          "SerializeProperty": "=FGC_流程追踪!A1"
+                        }
+                      }
+                    ],
+                    "BreakpointIdentity": "f3376a7d-c024-4a55-9d1e-f36f364c853e"
+                  }
+                ],
+                "Text": "查看流程图",
+                "ClickMode": 1,
+                "TemplateKey": "_RS_Main"
+              }
+            },
+            "StyleInfo": {
+              "FontFamily": "Body",
+              "FontSize": 14.666666666666666,
+              "HorizontalAlignment": 2,
+              "Underline": false
+            },
+            "Value": "查看流程图"
+          }
+        ]
+      }
+    },
+    "1,1": {
+      "CellType": {
+        "$type": "Forguncy.RepeaterCellType, ServerDesignerCommon",
+        "TemplatePageName": "a9dda523558c44c189c02319d3d55b4",
+        "DataSourceType": 1,
+        "DataSource": {
+          "$type": "ServerDesignerCommon.Model.BindingDataSourceModel, ServerDesignerCommon",
+          "TableName": "ACT_HI_COMMENT_View",
+          "BindingInfos": [
+            {
+              "GUID": "3dbc259a-0c33-4fc6-aedf-57f6057eae2a",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "ID_",
+                "GUID": "37574735-6aad-4a42-8c64-009b5b42b619"
+              },
+              "ColumnName": "ID"
+            },
+            {
+              "GUID": "009fd608-2016-42a4-9ebb-427eba2eec62",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "TYPE_",
+                "GUID": "4112a63b-2ecc-4e2f-a4f5-c153e66d0025"
+              },
+              "ColumnName": "类型"
+            },
+            {
+              "GUID": "f5198399-ae84-47a4-b152-0e467370d70e",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "TIME_",
+                "GUID": "923822ee-fce5-4a47-80ac-33651a5cf758"
+              },
+              "ColumnName": "创建时间"
+            },
+            {
+              "GUID": "a4a50d38-7c4f-432b-83e1-db9f1d513a65",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "USER_ID_",
+                "GUID": "1e4940d7-f594-4909-96e2-c84b0ca7895a"
+              },
+              "ColumnName": "审批人"
+            },
+            {
+              "GUID": "9cf271b3-d7d3-4762-81d1-f45f58b61fcf",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "TASK_ID_",
+                "GUID": "046938e0-d51c-44bb-acd9-c4e682f16d45"
+              },
+              "ColumnName": "任务ID"
+            },
+            {
+              "GUID": "2cb08211-7175-4463-82a2-bb453c3feb66",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "PROC_INST_ID_",
+                "GUID": "bc304a5d-1383-4430-ac19-5cb6d994a804"
+              },
+              "ColumnName": "流程实例ID"
+            },
+            {
+              "GUID": "0c609c5b-3833-415e-a2f8-b597999a2536",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "ACTION_",
+                "GUID": "1bac2882-0cc9-4287-9260-2e91c1b6d312"
+              },
+              "ColumnName": "操作"
+            },
+            {
+              "GUID": "b9f3cd48-869c-4b4c-a516-cd8abcd068d4",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "MESSAGE_",
+                "GUID": "0367e71c-f534-4562-ac27-230d98ccf87d"
+              },
+              "ColumnName": "备注"
+            },
+            {
+              "GUID": "305bb636-7cb1-43e7-a401-4335aaa10b46",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "INTERNAL_COMMENT_",
+                "GUID": "680a0f2d-4a17-47c2-b7ea-55fee5a65ea8"
+              },
+              "ColumnName": "系统备注"
+            },
+            {
+              "GUID": "0e0cc5b7-ff16-45da-bc7b-38af09403adf",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "TASK_ID_",
+                "GUID": "3be4c714-d2ae-400f-b57d-fbe599022f7b",
+                "RelationBinding": {
+                  "RelatedTable": "ACT_HI_TASKINST_View",
+                  "RelatedColumn": "ID_",
+                  "DisplayColumn": "NAME_"
+                }
+              },
+              "ColumnName": "任务名称"
+            },
+            {
+              "GUID": "4a716cdd-9a3d-4b80-aaab-f25cac9c5134",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "TASK_ID_",
+                "GUID": "7a652233-da35-4d17-9719-fa5b71bfd858",
+                "RelationBinding": {
+                  "RelatedTable": "ACT_HI_TASKINST_View",
+                  "RelatedColumn": "ID_",
+                  "DisplayColumn": "TASK_TYPE_"
+                }
+              },
+              "ColumnName": "任务类型"
+            },
+            {
+              "GUID": "ffa9d09a-1f67-4fb3-9569-1c8d17826f8c",
+              "BindingInfo": {
+                "TableName": "ACT_HI_COMMENT_View",
+                "ColumnName": "TASK_ID_",
+                "GUID": "27f5d86e-c39f-4a78-a9a8-f92249f722a4",
+                "RelationBinding": {
+                  "RelatedTable": "ACT_HI_TASKINST_View",
+                  "RelatedColumn": "ID_",
+                  "DisplayColumn": "TASK_BLOCK_TYPE_"
+                }
+              },
+              "ColumnName": "任务阻塞类型"
+            }
+          ],
+          "SqlCondition": {
+            "$type": "ForguncyDataAccess.GeneralCESqlCondition, ForguncyDataAccess",
+            "ColumnBindingInfo": {
+              "TableName": "ACT_HI_COMMENT_View",
+              "ColumnName": "PROC_INST_ID_",
+              "GUID": "1b3a4c8e-1e24-46ac-8187-346430cb38af"
+            },
+            "Value": {
+              "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+              "SerializeProperty": "=FGC_审批记录!最终的流程实例ID"
+            }
+          },
+          "OrderBySqlCondition": {
+            "OrderByColumns": [
+              {
+                "ColumnBindingInfo": {
+                  "TableName": "ACT_HI_COMMENT_View",
+                  "ColumnName": "TIME_",
+                  "GUID": "6acb5dac-d57c-4a39-bd5d-750a30d33fd5"
+                },
+                "Order": 1
+              }
+            ]
+          },
+          "IsListviewDataSource": true,
+          "CustomColumns": [
+            "ID",
+            "类型",
+            "创建时间",
+            "审批人",
+            "任务ID",
+            "流程实例ID",
+            "操作",
+            "备注",
+            "系统备注",
+            "任务名称",
+            "任务类型",
+            "任务阻塞类型"
+          ]
+        },
+        "DataSourceListviewName": "表格1",
+        "TopCount": 20,
+        "IsLoadOnDemand": true,
+        "LoadOnDemandCount": 10,
+        "TemplateKey": "_RS_Static"
+      }
+    }
+  },
+  "StyleDatas": {
+    "Styles": [
+      {
+        "Background": 0,
+        "FontFamily": 1,
+        "FontSize": -999.0,
+        "HorizontalAlignment": 2,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontFamily": 1,
+        "FontSize": -999.0,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontFamily": 1,
+        "HorizontalAlignment": 2,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      }
+    ],
+    "Types": {
+      "Strs": [
+        "#00FFFFFF",
+        "Body",
+        "Center"
+      ]
+    },
+    "CellStyles": {
+      "1,1": 0,
+      "1,2": 1,
+      "1,3": 1,
+      "1,4": 1,
+      "1,5": 1,
+      "1,6": 1,
+      "1,7": 1,
+      "1,8": 1,
+      "1,9": 1,
+      "1,10": 1,
+      "1,11": 1,
+      "1,12": 1,
+      "1,13": 1,
+      "1,14": 2,
+      "2,1": 1,
+      "2,2": 1,
+      "2,3": 1,
+      "2,4": 1,
+      "2,5": 1,
+      "2,6": 1,
+      "2,7": 1,
+      "2,8": 1,
+      "2,9": 1,
+      "2,10": 1,
+      "2,11": 1,
+      "2,12": 1,
+      "2,13": 1,
+      "2,14": 2,
+      "3,1": 1,
+      "3,2": 1,
+      "3,3": 1,
+      "3,4": 1,
+      "3,5": 1,
+      "3,6": 1,
+      "3,7": 1,
+      "3,8": 1,
+      "3,9": 1,
+      "3,10": 1,
+      "3,11": 1,
+      "3,12": 1,
+      "3,13": 1,
+      "3,14": 2,
+      "4,1": 1,
+      "4,2": 1,
+      "4,3": 1,
+      "4,4": 1,
+      "4,5": 1,
+      "4,6": 1,
+      "4,7": 1,
+      "4,8": 1,
+      "4,9": 1,
+      "4,10": 1,
+      "4,11": 1,
+      "4,12": 1,
+      "4,13": 1,
+      "4,14": 2,
+      "5,1": 1,
+      "5,2": 1,
+      "5,3": 1,
+      "5,4": 1,
+      "5,5": 1,
+      "5,6": 1,
+      "5,7": 1,
+      "5,8": 1,
+      "5,9": 1,
+      "5,10": 1,
+      "5,11": 1,
+      "5,12": 1,
+      "5,13": 1,
+      "5,14": 2,
+      "6,1": 1,
+      "6,2": 1,
+      "6,3": 1,
+      "6,4": 1,
+      "6,5": 1,
+      "6,6": 1,
+      "6,7": 1,
+      "6,8": 1,
+      "6,9": 1,
+      "6,10": 1,
+      "6,11": 1,
+      "6,12": 1,
+      "6,13": 1,
+      "6,14": 2,
+      "7,1": 1,
+      "7,2": 1,
+      "7,3": 1,
+      "7,4": 1,
+      "7,5": 1,
+      "7,6": 1,
+      "7,7": 1,
+      "7,8": 1,
+      "7,9": 1,
+      "7,10": 1,
+      "7,11": 1,
+      "7,12": 1,
+      "7,13": 1,
+      "7,14": 2,
+      "8,1": 1,
+      "8,2": 1,
+      "8,3": 1,
+      "8,4": 1,
+      "8,5": 1,
+      "8,6": 1,
+      "8,7": 1,
+      "8,8": 1,
+      "8,9": 1,
+      "8,10": 1,
+      "8,11": 1,
+      "8,12": 1,
+      "8,13": 1,
+      "8,14": 2,
+      "9,1": 1,
+      "9,2": 1,
+      "9,3": 1,
+      "9,4": 1,
+      "9,5": 1,
+      "9,6": 1,
+      "9,7": 1,
+      "9,8": 1,
+      "9,9": 1,
+      "9,10": 1,
+      "9,11": 1,
+      "9,12": 1,
+      "9,13": 1,
+      "9,14": 2,
+      "10,1": 1,
+      "10,2": 1,
+      "10,3": 1,
+      "10,4": 1,
+      "10,5": 1,
+      "10,6": 1,
+      "10,7": 1,
+      "10,8": 1,
+      "10,9": 1,
+      "10,10": 1,
+      "10,11": 1,
+      "10,12": 1,
+      "10,13": 1,
+      "10,14": 2,
+      "11,1": 1,
+      "11,2": 1,
+      "11,3": 1,
+      "11,4": 1,
+      "11,5": 1,
+      "11,6": 1,
+      "11,7": 1,
+      "11,8": 1,
+      "11,9": 1,
+      "11,10": 1,
+      "11,11": 1,
+      "11,12": 1,
+      "11,13": 1,
+      "11,14": 2,
+      "12,1": 1,
+      "12,2": 1,
+      "12,3": 1,
+      "12,4": 1,
+      "12,5": 1,
+      "12,6": 1,
+      "12,7": 1,
+      "12,8": 1,
+      "12,9": 1,
+      "12,10": 1,
+      "12,11": 1,
+      "12,12": 1,
+      "12,13": 1,
+      "12,14": 2,
+      "13,1": 1,
+      "13,2": 1,
+      "13,3": 1,
+      "13,4": 1,
+      "13,5": 1,
+      "13,6": 1,
+      "13,7": 1,
+      "13,8": 1,
+      "13,9": 1,
+      "13,10": 1,
+      "13,11": 1,
+      "13,12": 1,
+      "13,13": 1,
+      "13,14": 2,
+      "14,1": 1,
+      "14,2": 1,
+      "14,3": 1,
+      "14,4": 1,
+      "14,5": 1,
+      "14,6": 1,
+      "14,7": 1,
+      "14,8": 1,
+      "14,9": 1,
+      "14,10": 1,
+      "14,11": 1,
+      "14,12": 1,
+      "14,13": 1,
+      "14,14": 2,
+      "15,1": 1,
+      "15,2": 1,
+      "15,3": 1,
+      "15,4": 1,
+      "15,5": 1,
+      "15,6": 1,
+      "15,7": 1,
+      "15,8": 1,
+      "15,9": 1,
+      "15,10": 1,
+      "15,11": 1,
+      "15,12": 1,
+      "15,13": 1,
+      "15,14": 2,
+      "16,1": 1,
+      "16,2": 1,
+      "16,3": 1,
+      "16,4": 1,
+      "16,5": 1,
+      "16,6": 1,
+      "16,7": 1,
+      "16,8": 1,
+      "16,9": 1,
+      "16,10": 1,
+      "16,11": 1,
+      "16,12": 1,
+      "16,13": 1,
+      "16,14": 2,
+      "17,1": 1,
+      "17,2": 1,
+      "17,3": 1,
+      "17,4": 1,
+      "17,5": 1,
+      "17,6": 1,
+      "17,7": 1,
+      "17,8": 1,
+      "17,9": 1,
+      "17,10": 1,
+      "17,11": 1,
+      "17,12": 1,
+      "17,13": 1,
+      "17,14": 2,
+      "18,1": 1,
+      "18,2": 1,
+      "18,3": 1,
+      "18,4": 1,
+      "18,5": 1,
+      "18,6": 1,
+      "18,7": 1,
+      "18,8": 1,
+      "18,9": 1,
+      "18,10": 1,
+      "18,11": 1,
+      "18,12": 1,
+      "18,13": 1,
+      "18,14": 2,
+      "19,1": 1,
+      "19,2": 1,
+      "19,3": 1,
+      "19,4": 1,
+      "19,5": 1,
+      "19,6": 1,
+      "19,7": 1,
+      "19,8": 1,
+      "19,9": 1,
+      "19,10": 1,
+      "19,11": 1,
+      "19,12": 1,
+      "19,13": 1,
+      "19,14": 2,
+      "20,1": 1,
+      "20,2": 1,
+      "20,3": 1,
+      "20,4": 1,
+      "20,5": 1,
+      "20,6": 1,
+      "20,7": 1,
+      "20,8": 1,
+      "20,9": 1,
+      "20,10": 1,
+      "20,11": 1,
+      "20,12": 1,
+      "20,13": 1,
+      "20,14": 2,
+      "21,1": 1,
+      "21,2": 1,
+      "21,3": 1,
+      "21,4": 1,
+      "21,5": 1,
+      "21,6": 1,
+      "21,7": 1,
+      "21,8": 1,
+      "21,9": 1,
+      "21,10": 1,
+      "21,11": 1,
+      "21,12": 1,
+      "21,13": 1,
+      "21,14": 2,
+      "22,1": 1,
+      "22,2": 1,
+      "22,3": 1,
+      "22,4": 1,
+      "22,5": 1,
+      "22,6": 1,
+      "22,7": 1,
+      "22,8": 1,
+      "22,9": 1,
+      "22,10": 1,
+      "22,11": 1,
+      "22,12": 1,
+      "22,13": 1,
+      "22,14": 2,
+      "23,1": 1,
+      "23,2": 1,
+      "23,3": 1,
+      "23,4": 1,
+      "23,5": 1,
+      "23,6": 1,
+      "23,7": 1,
+      "23,8": 1,
+      "23,9": 1,
+      "23,10": 1,
+      "23,11": 1,
+      "23,12": 1,
+      "23,13": 1,
+      "23,14": 2,
+      "24,1": 1,
+      "24,2": 1,
+      "24,3": 1,
+      "24,4": 1,
+      "24,5": 1,
+      "24,6": 1,
+      "24,7": 1,
+      "24,8": 1,
+      "24,9": 1,
+      "24,10": 1,
+      "24,11": 1,
+      "24,12": 1,
+      "24,13": 1,
+      "24,14": 2,
+      "25,1": 3,
+      "25,2": 3,
+      "25,3": 3,
+      "25,4": 3,
+      "25,5": 3,
+      "25,6": 3,
+      "25,7": 3,
+      "25,8": 3,
+      "25,9": 3,
+      "25,10": 3,
+      "25,11": 3,
+      "25,12": 3,
+      "25,13": 3
+    },
+    "SheetStyle": {
+      "FontFamily": 1,
+      "FontSize": -999.0,
+      "BorderBottom": null,
+      "BorderTop": null,
+      "BorderLeft": null,
+      "BorderRight": null
+    }
+  },
+  "Spans": [
+    "0,0,1,15",
+    "1,1,24,13"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.NormalPage, ServerDesignerCommon",
+    "MobilePageName": "FGC_审批记录_手机版",
+    "Title": "审批记录",
+    "PermissionData": {
+      "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionData, Forguncy.RbacPermission.Core",
+      "permissionResource": {
+        "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionResource, Forguncy.RbacPermission.Core"
+      },
+      "permissionBindings": [
+        {
+          "$type": "Forguncy.RbacPermission.Core.Impl.Page.PagePermissionBinding, Forguncy.RbacPermission.Core",
+          "roleNames": [
+            "FGC_LoginUser"
+          ]
+        }
+      ]
+    },
+    "RowBreakLines": [],
+    "RepeatRangeSettings": [],
+    "PropertyDefinitions": [
+      {
+        "Name": "流程实例视图ID",
+        "PropertyValueType": 2,
+        "BindingInfo": {
+          "TableName": "ACT_HI_PROCINST_View",
+          "ColumnName": "ID_",
+          "GUID": "a9d71850-f0df-4b2a-aaa5-bdc891e3d5f5"
+        }
+      },
+      {
+        "Name": "运行任务视图中的流程实例ID",
+        "PropertyValueType": 2,
+        "BindingInfo": {
+          "TableName": "ACT_RU_TASK_View",
+          "ColumnName": "PROC_INST_ID_",
+          "GUID": "2dd9f1c6-aebd-4a63-b933-7b1a6442c765"
+        }
+      },
+      {
+        "Name": "全部任务视图中的流程实例ID",
+        "PropertyValueType": 2,
+        "BindingInfo": {
+          "TableName": "ACT_HI_TASKINST_View",
+          "ColumnName": "PROC_INST_ID_",
+          "GUID": "d347c19f-e00f-4a00-897d-2073196ad771"
+        }
+      },
+      {
+        "Name": "最终的流程实例ID",
+        "PropertyValueType": 1,
+        "Formula": {
+          "SerializeProperty": "=IF(ISBLANK(FGC_审批记录!流程实例视图ID),IF(ISBLANK(FGC_审批记录!运行任务视图中的流程实例ID),FGC_审批记录!全部任务视图中的流程实例ID,FGC_审批记录!运行任务视图中的流程实例ID),FGC_审批记录!流程实例视图ID)"
+        }
+      }
+    ],
+    "CommandDefinitions": [],
+    "MethodDefinitions": [],
+    "PageLoadedCommandList": []
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  }
+}//9BVm9ZaY5YYoLwGk/12n7iMYGECpy2vWW2OUyaNKrZLyXIeBYQ9BNMnyXAsa2z9A9HjgdK1dFSvKXWfQnHvRFlUdkV7F7EzHj5MTWIOl2M8XhTdicahBSk6mzV8OPg7Jbj/7KfFCuiepSugmU5ojbb8aV7aNwCVJEYfssGagDxeFQG+w634T3JDeUhE5ioVbQ+AdKcbLR+Gz6x03GdGS7vX4nD8A2qCcu/WSJyL7/TJjiJ3xPDdZAjSXOqK3E6x+zoXStC7VnOozR9r5xtLi/CjPaRQV4g7nqlBxEqeEeGkYXJ9LFDMr4ZvOPpG28JDKQPu+WYuT7THQ+ohbg3dcuiXVRLALfBb0FF25qN1vChHYfL0sSD8AV7sGg0Odum4Ct5bOh3nxqxGjm3e6uilzvW5ZW9E3meZCDvb0M/5Inbjt2c6By4LGyZmssPHeY9tnHrdNuxM7/fsh5TCutB2KCyV68FtWWfo4U08lpQIpPZNvukumA7HHWv7b+KHI01jd+0KaHgstT+4kCAV37UEjp3VfHWzWKl/fFeNpdgZHzDZP+uBE8kmV0+9YNGA/EIdVQAqz89l6KM2mVqlm0a9Agx6MEquditjD4ofXCKhdm+hTIw2BKoMeMzNh+uHRD3NiC6Lw6OFb7g6LnHzxmg40Tk0RAyVe4s6lD3WOZ/x1UgFq5QQkreEdt74dN/QxxCuwbLIiM5zrZtlHFanapFYDOkn0DEqVQUryDo+KwTHGJ1/ZP6X/LfbMMDwa1raUVK/njAbVhRhm8muWwAeH5raEMAEt4aSq5ur9XefrIeCexQF5SOs3I23TkoHVOago7+FGG5NWIVrn3UpGYz8JV6o2EzohozUJ8dYAj14cCOIOUaWOoRpQIauObpsnDAFVYGpqISTNmlAtPuKg0IbAljV2VW6FZkPArUzVrltylpUlNkp+5YO4ya8cLcdcj0sk+UxJAgZr4WQ+STxOJ6CeNn1j4/VSCH36KPjCvbcr7ENseF0IFw9cDj6N4QLhc1ZSRiigyYvVMJx+Xpa5Z/NF+pMhisjQqgzwT65KWSijYsqPUN+w/c74jsPL3RWYS5E59r8IbNWMz75kUata5PiH9SNxMcoSuQhz+JU6x4vVUdBCrpMpeaAZqu6OXtCyyd+2MG/em/Ycuz+DTXnqXZE1XZt3QH/ubqdDfpXr21KJIwPoAa1si9TDp8FtI4Zi6Qb/upMUQO7t14cRMk3KjiJBZrbLFSUWNnzPX6Yi6tb3ECds+ZPKwkcqlk5KUQMFqsL6TrDammDmna8lcbUwU05+igZUfgZ2WU7ige4Pu4IZi4qqX94xdKjtkoDTYcxU82Qka6gwi4CtZ0kLMpOH7PmJzFOjKHQfU5ZOD+Zx5nOOclkNHbTORQufNb+TN7eSTMidbSa+WS6DS1dZrVV/MiNTa73OmCZ90PnMK5TbxeeWGx9rr8ul+J5daj4GEBp5Yc3tJvqZyukNaQFLkqYVXPJbHpA+hBedP/FfqaTDYlY9atCPxEZnIK2EeTIUDKNq+Hq8jJHQ+7B3XUgT5X5sxYPEx51pvA8bhd6lY0aosIWps01z18kHLag1prfD1UTdXgYSTTEE2O+d8fuyPsHNkuvYNkKZn1r3qFp2gQ56A2+sEMKTmkmbXjULff+j1F1syrWALfR+DKYfEa/F5bwBf6vpGcrrtRu/WAaaYSi9glljcRJ5k1pOBn1JebrKKlKIu2sFx1cwfgEvkh7uNuGEZuJ/iJemaVywXJN9+ZgzuO7ikQ6+6sdv8Serq425DIJkOM/lJ10y97U1n+ASmPcIJXBoRD2j8Mptzs3x8Pd9Xii/C4tJjJ0gneeAFB1ep1Lddw9l1Q+osY6j0K6QM8GXcHkWgZNGHual/wxJfLbWZvFL40n5vHjtFi0uxx4v0GMn8o25dMCTS26zyBJyRcGD2OlqQK/WzA==|1944

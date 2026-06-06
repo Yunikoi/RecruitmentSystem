@@ -1,0 +1,269 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "30": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 31
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "19": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      }
+    },
+    "Count": 20
+  },
+  "Values": {
+    "5,3": "修改密码",
+    "9,3": "*",
+    "9,4": "原密码",
+    "13,3": "*",
+    "13,4": "新密码",
+    "17,3": "*",
+    "17,4": "确认新密码",
+    "22,3": "修改密码",
+    "25,3": "取消修改"
+  },
+  "AttachInfos": {
+    "10,3": {
+      "CellType": {
+        "$type": "Forguncy.TextCellType, ServerDesignerCommon",
+        "ShowPassword": true,
+        "SavedValidators": [
+          {
+            "$type": "Forguncy.CellTypes.Models.UniqueValidadator, ServerDesignerCommon"
+          }
+        ],
+        "TemplateKey": "_RS_NewUnderlineUpdate",
+        "ForguncyAttribute": "ChangePassword_OldPassword"
+      },
+      "DataValidationInfo": {
+        "IgnoreBlank": false
+      }
+    },
+    "14,3": {
+      "CellType": {
+        "$type": "Forguncy.TextCellType, ServerDesignerCommon",
+        "ShowPassword": true,
+        "SavedValidators": [
+          {
+            "$type": "Forguncy.CellTypes.Models.UniqueValidadator, ServerDesignerCommon"
+          }
+        ],
+        "TemplateKey": "_RS_NewUnderlineUpdate",
+        "ForguncyAttribute": "ChangePassword_NewPassword"
+      },
+      "DataValidationInfo": {
+        "IgnoreBlank": false
+      }
+    },
+    "18,3": {
+      "CellType": {
+        "$type": "Forguncy.TextCellType, ServerDesignerCommon",
+        "ShowPassword": true,
+        "SavedValidators": [
+          {
+            "$type": "Forguncy.CellTypes.Models.UniqueValidadator, ServerDesignerCommon"
+          }
+        ],
+        "TemplateKey": "_RS_NewUnderlineUpdate",
+        "ForguncyAttribute": "ChangePassword_ConfirmPassword"
+      },
+      "DataValidationInfo": {
+        "IgnoreBlank": false
+      }
+    },
+    "22,3": {
+      "CellType": {
+        "$type": "Forguncy.ButtonCellType, ServerDesignerCommon",
+        "Text": "修改密码",
+        "AutoExecute": true,
+        "TemplateKey": "_RS_Main1",
+        "ForguncyAttribute": "ChangePassword_Button"
+      }
+    },
+    "25,3": {
+      "CellType": {
+        "$type": "Forguncy.HyperlinkCellType, ServerDesignerCommon",
+        "Text": "取消修改",
+        "ClickMode": 1,
+        "TemplateKey": "_RS_Main",
+        "ForguncyAttribute": "CancelChangePassword_Button"
+      }
+    }
+  },
+  "StyleDatas": {
+    "Styles": [
+      {
+        "FontFamily": 0,
+        "FontSize": 24.0,
+        "FontWeight": 1,
+        "Foreground": 2,
+        "Formatter": 3,
+        "HorizontalAlignment": 4,
+        "VerticalAlignment": 5
+      },
+      {
+        "FontFamily": 0,
+        "Foreground": 6,
+        "Underline": false,
+        "Strikethrough": false
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 14.666666984558105,
+        "Foreground": 7,
+        "Formatter": 3
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 14.666666666666666,
+        "Foreground": 8,
+        "Formatter": 9
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 16.0,
+        "Foreground": null,
+        "Formatter": 3
+      },
+      {
+        "FontFamily": 0,
+        "FontSize": 16.0,
+        "Foreground": null,
+        "Formatter": 3,
+        "HorizontalAlignment": 10,
+        "Underline": false
+      }
+    ],
+    "Types": {
+      "Strs": [
+        "Body",
+        "Bold",
+        "Text 1 25",
+        "[AUTO]General",
+        "Left",
+        "Bottom",
+        "#FFFF0000",
+        "#FF7F7F7F",
+        "Text 1 15",
+        "@",
+        "Center",
+        "#FF000000"
+      ]
+    },
+    "CellStyles": {
+      "5,3": 0,
+      "9,3": 1,
+      "9,4": 2,
+      "10,3": 3,
+      "13,3": 1,
+      "13,4": 2,
+      "14,3": 3,
+      "17,3": 1,
+      "17,4": 2,
+      "18,3": 3,
+      "22,3": 4,
+      "25,3": 5
+    },
+    "SheetStyle": {
+      "FontFamily": 0,
+      "FontSize": -999.0,
+      "Foreground": 11
+    }
+  },
+  "Spans": [
+    "5,3,2,14",
+    "22,3,2,14",
+    "25,3,1,14",
+    "18,3,2,14",
+    "14,3,2,14",
+    "10,3,2,14"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.NormalPage, ServerDesignerCommon",
+    "Title": "修改密码",
+    "RowBreakLines": [],
+    "RepeatRangeSettings": [],
+    "PropertyDefinitions": [],
+    "CommandDefinitions": [],
+    "MethodDefinitions": [],
+    "PageLoadedCommandList": [],
+    "IsBuiltInPage": true,
+    "IsMobilePage": true
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  },
+  "BackgroundPictures": [
+    {
+      "Name": "469b2a00-3c73-4c59-bcf4-8ed45845ba8b.png",
+      "StyleInfo": {
+        "CornerRadius": 20.0,
+        "Fill": "#FFF6F6F8",
+        "StrokeDashType": 8,
+        "Stroke": "black",
+        "StrokeThickness": 0.0
+      },
+      "IsAutomaticStroke": false,
+      "IsAutomaticFill": false,
+      "Location": "20,60",
+      "Size": "340,500"
+    }
+  ]
+}//NtU+CwOEBeT3JRqFUxpPNis2Z0o9wQ8obodu9u5hvlfnRc39W52pPEIRCzeL14CvAVj1B/xpI6E6gYJwK5qG8MQ/hbV8biK262VMDnj85bkR1ZeUyF9qZ2LMjaic8bE+SRtNjm0vr1Uktj8IK1yAkqq40D5VdgEOSX+wKchjR0Bc9mSRVvw21SRt/+/YQyhlHKTcVi5JIIxGABxjGq7CmBjqFt/Fw6hMnHzB1uY20wHCiuLs3UifrYeKY32DmmF4LuqB7OqAvSe73rnejoGSopyu1MCC7a6H7KGSRD3lwOFJy+PuSvNyn+DkiMuQEb2VjDhMa+f30oM75BOcxv1/ceJiRMFO/9aL0xzyn3iHM1k5CUs4yU8jH6pTbW7LVbZyfULAg3gm96PIZyE6SdLJVp9/pRYeCURuccSZsU8liyvm1ZTB+NKvOtReyqA+k9x3xvBPFbkeVKY7hbIbBbiAg9pE6gXOGvpMb6d4zc+Ctr+tIxioLYq77pPSgZv4EMha+Fl6+kOgTJANUq5E3emtBU7yVA2aRh74rUFCRt0dx1Jk7N69rgTkjoYRXykEuHBd6vqr5ruQ+v5GqlhlhjIdzrpBtF4YKx/bMNOwvPNXNtXAmXxfJRiML9CHWeP9zynV+TakuHLy+jcAr249JjgIGh2UPYQtQuVky96LrlSguxgOJMzhlTT5osaCewvNpV7BR6G3RFuMB6K8ip2MVg/kaoc7T4HwY46DkcimN9FET7EUwkOaGz6rBKh7Or7gYcRqrLKsnILFL64QewViOoV8miPLHjqDpLgcgtpbAMj56HB/0DCwvWo6ze4IsSPDGv9eCLco1RBADVKrAwFKc2oZSajt3vgS9Uu0JOzM/q38x8OoqmJMNBF//YaAKkZrCcadj6t1fbZiieOmjbezmAhC7U+YoZg2bc2fOAp+YhiH2KoiVSnrVyV26ccbcA3fiAOdvbXOTFqhKD3gXeMG+13CpA3djBnTq7xYPK6c+LUn+FieAKuWgQ9XhsMlc2/uj/oXw/GvH5d7LnyHqGkOXCeNg/E3e7reNhMwgbxkiuOVAozFj9nxvfyBhT0XnivtHACLn6YbPJjREIw3z2Upgm21Ge7i+/mmGAIrLf8iIFLcpHVeFvgRBs/BkNZ6p1Y3QEZ9fLVqox+1iHYgzZlcujzgdnU/0rzSEms6P4HWE5eDlGGjb3yD8aCqQh5MIQTWVHvW7KoCvTqAHeAdbJkTfTcQp4vtquqA1OwZ7sGhi7a298Oh46gEh88Vbwzb0qsI0vs7v7QyXSTl1np3euvhpVsSEdPKmSWbb8jezi4Y/W8zsrqMCy5tFdKTcHhYskQv6jkQfRWWLAzUpWX4bDsiv5T61xdCqZou1qSO6a2Mqg5UYR+JlSqRPh+TdMw+0HSQOZlIjuCKeK4zYWVgzEfzPLe26BNB1Imj1RpdNmv2zZLHcyEcnoMdWB5+gqpiS0dQ2GppJZpNvigIogIF+rrT48IUB9wFL0cmdlrXzv/9nLa9dqX5T0bIVQtF6Z1looaGKPiEU2iWS2FgY6afAgRSvzrzw69HeUonb8tPJFYRQ5Qn/3QYTRO3fafF5uSHhplIfXcVqDPPvNAF2l8FgUgwQYFjteA8UQeXeOlyTBQIqPVm6BKFD/NM+ef34t9gQdMWhouDKLcW3qc4vqBcIBx0ibyo2AGlegzuTLj5L1Y6ClG5JouEgXSfU8961Ebrb37mJUHyqoamZ6zqvglCKQ0vHsEfSKIWPk/Vam0xmAf26exurK15SNbIaGjHeZSIu8oLz/T2P5C9EIV2zvcS3aPZ5kbGHJ7Z6WVCrYFHbhuSeOWDL5gEAuS8TAkLFYI+YcJS7n3C7P78NBqI6WunmJ+j7FnTxY/6jirhzr0ywynzLR54a7CQ10IYrUcwJpT225i1u+SOdOSc8jbpGUuwFRzJsrcXpg==|1944

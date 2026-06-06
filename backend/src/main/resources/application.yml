@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: talentflow-ats
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# 通用 AI 配置（密钥优先从 application-local.yml 或环境变量读取）
+ai:
+  enabled: true
+  api-key: ${AI_API_KEY:}
+  base-url: https://api.deepseek.com
+  model: deepseek-chat
+  timeout-seconds: 60
+
+app:
+  upload-dir: uploads/resumes
+
+---
+# 本地开发：H2 内存库，开箱即用
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:h2:mem:recruitment;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  seed-demo-data: true
+  cors-allowed-origin-patterns:
+    - "*"

@@ -1,0 +1,14 @@
+﻿{
+  "WebUrlCantEmpty": {
+    "en": "URL can't be empty.",
+    "cn": "地址不能为空。",
+    "ja": "URLが指定されていません。",
+    "kr": "URL은 비워주실 수 없습니다."
+  },
+  "Timeout_Message": {
+    "en": "The request has exceeded the set timeout period of {0} second(s).",
+    "cn": "请求已经超过设置的{0}秒超时时间。",
+    "ja": "リクエストは指定されているタイムアウト値 {0} 秒を超過しました。",
+    "kr": "요청이 {0}초의 설정된 제한 시간을 초과했습니다."
+  }
+}

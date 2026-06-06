@@ -1,0 +1,126 @@
+﻿
+=== DocumentInfo ===
+{
+  "VersionString": "12.0.2.0"
+}
+
+=== ApplicationSettings.json ===
+{
+  "IntegrateWithOtherApplication": {
+    "Password": "Ql@cRQVIswv$"
+  },
+  "ShareCommandContainers": [],
+  "ListviewLoadingIndicatorSettings": {},
+  "ServerPropertySecurityID": "66fe0870-1997-4903-8096-005bd0aae5c0",
+  "GlobalProperties": [],
+  "WebSitePort": 23500,
+  "UserServicePort": 30244,
+  "BpmServerSchemaId": "65ca7cdd-6f34-4b61-b7cb-629ea28837a8",
+  "ProcessDataConnectionSet": {
+    "ExternalDatabaseId": ""
+  },
+  "NotAllowAnonymousAccessData": true,
+  "StartPage": "submit",
+  "StartDateFiscalYear": 1,
+  "BaseOnStartingMonth": true,
+  "MultipleLanguageSettings": {
+    "Languages": [
+      {
+        "Name": "cn",
+        "IsDefault": true,
+        "Description": "内置语言中文，不可删除",
+        "IsBuildIn": true,
+        "LanguageAttribute": "zh-cn",
+        "FontFamily": "Body"
+      },
+      {
+        "Name": "en",
+        "Description": "内置语言英文，不可删除",
+        "IsBuildIn": true,
+        "LanguageAttribute": "en",
+        "FontFamily": "Calibri"
+      }
+    ],
+    "PublicResource": {},
+    "RuntimeBuiltInResource": {
+      "FrontEndResources": {},
+      "ServerResources": {},
+      "ProcessDesignerResource": {},
+      "ProcessTrackerResource": {}
+    },
+    "PluginResource": {}
+  },
+  "AppAIModelSettings": {
+    "AIModels": []
+  },
+  "AppMCPConfigSettingEncrypt": "Ci5S0rjTn+rtTPKUu1oqNuv/nijsyU5OMGHJsrCXsb66nSlWB9gZSjWsrUyxtwB4CxjAVUFQivmJpbbaj/g/bDFDFWUS3dQOkUlieAvleLLmSDaEPvF2344zUM1brpCXhnUQPb/puZ7k2zE/5ihxtCVTZj0PuJvWMricwUVUPwH+iD6CTRV39xyqfKjv4mvC",
+  "ServerCommandsAsMCPServerSetting": {
+    "IsEnableMCPServer": true
+  }
+}
+
+=== DataConnectionSet.json ===
+[]
+
+=== Tables JSON ===
+Tables\review_record_.json
+
+=== Custom Pages ===
+Pages\内建手机页面\FGC_401页面_手机版.json
+Pages\内建手机页面\FGC_两步验证_扫码页面_手机版.json
+Pages\内建手机页面\FGC_两步验证_验证页面_手机版.json
+Pages\内建手机页面\FGC_修改密码_手机版.json
+Pages\内建手机页面\FGC_修改用户信息_手机版.json
+Pages\内建手机页面\FGC_忘记密码_手机版.json
+Pages\内建手机页面\FGC_登录_手机版.json
+Pages\内建手机页面\FGC_维护中_手机版.json
+Pages\内建手机页面\FGC_连接已断开_手机版.json
+Pages\内建手机页面\FGC_邮件订阅_手机版.json
+Pages\内建手机页面\FGC_重置密码_手机版.json
+Pages\内建手机页面\FGC_重置密码发送邮件成功_手机版.json
+Pages\内建页面\FGC_401页面.json
+Pages\内建页面\FGC_两步验证_扫码页面.json
+Pages\内建页面\FGC_两步验证_验证页面.json
+Pages\内建页面\FGC_修改密码.json
+Pages\内建页面\FGC_修改用户信息.json
+Pages\内建页面\FGC_忘记密码.json
+Pages\内建页面\FGC_登录.json
+Pages\内建页面\FGC_维护中.json
+Pages\内建页面\FGC_连接已断开.json
+Pages\内建页面\FGC_邮件订阅.json
+Pages\内建页面\FGC_重置密码.json
+Pages\内建页面\FGC_重置密码发送邮件成功.json
+Pages\流程页面文件夹\FGC_任务详情.json
+Pages\流程页面文件夹\FGC_审批记录.json
+Pages\流程页面文件夹\FGC_我发起的.json
+Pages\流程页面文件夹\FGC_我委托的.json
+Pages\流程页面文件夹\FGC_我的已办.json
+Pages\流程页面文件夹\FGC_我的已阅.json
+Pages\流程页面文件夹\FGC_我的待办.json
+Pages\流程页面文件夹\FGC_我的待阅.json
+Pages\流程页面文件夹\FGC_流程列表.json
+Pages\流程页面文件夹\FGC_流程追踪.json
+Pages\流程页面文件夹_手机版\FGC_任务详情_手机版.json
+Pages\流程页面文件夹_手机版\FGC_审批记录_手机版.json
+Pages\流程页面文件夹_手机版\FGC_我发起的_手机版.json
+Pages\流程页面文件夹_手机版\FGC_我委托的_手机版.json
+Pages\流程页面文件夹_手机版\FGC_我的已办_手机版.json
+Pages\流程页面文件夹_手机版\FGC_我的已阅_手机版.json
+Pages\流程页面文件夹_手机版\FGC_我的待办_手机版.json
+Pages\流程页面文件夹_手机版\FGC_我的待阅_手机版.json
+Pages\流程页面文件夹_手机版\FGC_流程列表_手机版.json
+Pages\流程页面文件夹_手机版\FGC_流程追踪_手机版.json
+
+=== SQLite tables ===
+  FGC_UMV_SC_E3B01A2B6AECA5DA98: 2 rows
+  FGC_UMV_TM: 1 rows
+  FGC_UserInfoTable: 1 rows
+  review_record_: 11 rows
+
+Schema FGC_UMV_SC_E3B01A2B6AECA5DA98: ['ID', 'Text', 'Hash']
+
+Schema FGC_UMV_TM: ['ID', 'TableName', 'DataVersion', 'IsAllCanAccessApp', 'AppAccessVersion']
+
+Schema FGC_UserInfoTable: ['FGC_UserName', 'FGC_FullName', 'FGC_Email', 'FGC_IsEnabled', 'FGC_Role', 'FGC_OrganizationSuperior']
+
+Schema review_record_: ['ID', 'FGC_Creator', 'FGC_CreateDate', 'FGC_LastModifier', 'FGC_LastModifyDate', 'resume', 'FGC_Rowversion', 'FGC_UpdateHelp', 'result']

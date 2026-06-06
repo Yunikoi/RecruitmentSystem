@@ -1,0 +1,98 @@
+{
+  "$type": "Forguncy.SaveLoad.ServerCommandSaveData, ServerDesignerCommon",
+  "Name": "retrieveJobDescription",
+  "Enabled": true,
+  "Triggers": {
+    "$type": "System.Collections.Generic.List`1[[Forguncy.SaveLoad.TriggerSaveDataBase, ServerDesignerCommon]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "Forguncy.SaveLoad.PostRequestTriggerSaveData, ServerDesignerCommon",
+        "Permission": {
+          "$type": "Forguncy.SaveLoad.ServerCommandPermissionSaveData, ServerDesignerCommon",
+          "PermissionData": {
+            "$type": "Forguncy.RbacPermission.Core.Impl.ServerCommand.ServerCommandPermissionData, Forguncy.RbacPermission.Core",
+            "permissionResource": {
+              "$type": "Forguncy.RbacPermission.Core.Impl.ServerCommand.ServerCommandPermissionResource, Forguncy.RbacPermission.Core"
+            },
+            "permissionBindings": {
+              "$type": "System.Collections.Generic.List`1[[Forguncy.RbacPermission.Core.Impl.ServerCommand.IServerCommandPermissionBinding, Forguncy.RbacPermission.Core]], System.Private.CoreLib",
+              "$values": [
+                {
+                  "$type": "Forguncy.RbacPermission.Core.Impl.ServerCommand.ServerCommandPermissionBinding, Forguncy.RbacPermission.Core",
+                  "roleNames": {
+                    "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+                    "$values": [
+                      "FGC_LoginUser",
+                      "FGC_Anonymous"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "EnabledMCP": true,
+        "InvokeTriggerTestData": {
+          "$type": "Forguncy.SaveLoad.InvokeTriggerTestDataSaveData, ServerDesignerCommon",
+          "UserName": "Administrator"
+        }
+      }
+    ]
+  },
+  "Commands": {
+    "$type": "System.Collections.Generic.List`1[[GrapeCity.Forguncy.Commands.Command, Forguncy.Commands]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "PostDataToWebApi.PostDataCommand, PostDataToWebApi",
+        "PostData": {
+          "$type": "PostDataToWebApi.DataItem, PostDataToWebApi",
+          "DataItemType": 1,
+          "Data": {
+            "$type": "PostDataToWebApi.ObjectData, PostDataToWebApi",
+            "Data": {
+              "$type": "System.Collections.Generic.List`1[[PostDataToWebApi.DataItem, PostDataToWebApi]], System.Private.CoreLib",
+              "$values": []
+            }
+          }
+        },
+        "WebUrl": "http://localhost:8080/webapi/positions",
+        "Method": "GET",
+        "SuccessCallback": "// 请求成功返回的数据存储在“result”变量中\n// 请使用“result”变量来完成请求成功的回调 \r\n//console.log(result);",
+        "ErrorCallback": "// 请求中发生的错误存储在“error”变量中\n// 请使用“error”变量来处理异常情况 \r\nconsole.error(error);",
+        "NewParameter": "岗位描述数据",
+        "Header": {
+          "$type": "System.Collections.Generic.List`1[[PostDataToWebApi.RequestHeaderSaveAndLoad, PostDataToWebApi]], System.Private.CoreLib",
+          "$values": []
+        },
+        "Timeout": 999.0,
+        "BreakpointIdentity": "9a93938d-6306-44a3-8fd0-aec2212e5846"
+      },
+      {
+        "$type": "Forguncy.Model.ReturnCommand, ServerDesignerCommon",
+        "CustomReturns": {
+          "$type": "System.Collections.Generic.List`1[[Forguncy.Model.CustomReturns, ServerDesignerCommon]], System.Private.CoreLib",
+          "$values": [
+            {
+              "$type": "Forguncy.Model.CustomReturns, ServerDesignerCommon",
+              "ReturnPropertyName": "jobDescriptionList",
+              "Value": {
+                "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+                "SerializeProperty": "=岗位描述数据"
+              }
+            }
+          ]
+        },
+        "BreakpointIdentity": "b4b9743b-21ae-4ddd-923e-2176f925c394"
+      }
+    ]
+  },
+  "ReturnProperties": {
+    "$type": "System.Collections.Generic.List`1[[Forguncy.SaveLoad.ReturnPropertySaveData, ServerDesignerCommon]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "Forguncy.SaveLoad.ReturnPropertySaveData, ServerDesignerCommon",
+        "Name": "jobDescriptionList"
+      }
+    ]
+  }
+}

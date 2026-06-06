@@ -1,0 +1,283 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "2": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 1
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "5": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 30.0
+        }
+      },
+      "6": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "7": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      }
+    },
+    "InLogicalVisibleIndexes": [
+      7
+    ],
+    "Count": 8,
+    "DefaultSize": 10.0
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "2": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "5": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "6": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "7": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "8": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "14": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      }
+    },
+    "Count": 15
+  },
+  "Values": {
+    "5,9": "发起"
+  },
+  "AttachInfos": {
+    "1,1": {
+      "TemplateCellSource": "标题"
+    },
+    "1,9": {
+      "TemplateCellSource": "版本号"
+    },
+    "3,1": {
+      "TemplateCellSource": "描述"
+    },
+    "5,9": {
+      "CellType": {
+        "$type": "Forguncy.ButtonCellType, ServerDesignerCommon",
+        "CommandList": [
+          {
+            "$type": "Forguncy.Model.ProcessStartCommand, ServerDesignerCommon",
+            "ProcessDefinitionId": {
+              "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+              "SerializeProperty": "='5b5ec9b3fb5d4fd095de4c07414ea5e'!B8"
+            },
+            "StartType": 1,
+            "ReturnResultName": "发起流程结果",
+            "BreakpointIdentity": "e19ecc6a-f327-4020-ad3b-df70c183e0b8"
+          },
+          {
+            "$type": "Forguncy.Model.ConditionCommand, ServerDesignerCommon",
+            "ConditionAndCommandPairList": [
+              {
+                "Condition": {
+                  "$type": "Forguncy.Model.IfCondition, ServerDesignerCommon",
+                  "param": {
+                    "$type": "Forguncy.Model.IfConditionPageElementParam, ServerDesignerCommon",
+                    "cellLocations": [
+                      {
+                        "SerializeProperty": "='5b5ec9b3fb5d4fd095de4c07414ea5e'!发起流程结果.TaskExists"
+                      }
+                    ]
+                  },
+                  "value": "1"
+                },
+                "CommandList": [
+                  {
+                    "$type": "Forguncy.Model.NavigateCommand, ServerDesignerCommon",
+                    "PageName": "FGC_任务详情_手机版",
+                    "BreakpointIdentity": "2ac23786-9a77-4384-a282-3c34de728082"
+                  }
+                ],
+                "ID": "f38a2063-cc1f-4727-8d65-50303086db25"
+              }
+            ],
+            "BreakpointIdentity": "a80db9e5-3553-40b7-a262-fe127bafb298"
+          }
+        ],
+        "Text": "发起",
+        "TemplateKey": "流程样式"
+      }
+    },
+    "7,1": {
+      "TemplateCellSource": "ID"
+    }
+  },
+  "StyleDatas": {
+    "Styles": [
+      {
+        "FontSize": 13.333333333333332,
+        "FontWeight": 0,
+        "Foreground": 1,
+        "ShrinkToFit": true
+      },
+      {
+        "FontSize": 13.333333333333332,
+        "Foreground": 2,
+        "Formatter": 3,
+        "HorizontalAlignment": 4
+      },
+      {
+        "FontSize": 13.333333333333332,
+        "Foreground": 2,
+        "WordWrap": true
+      }
+    ],
+    "Types": {
+      "Strs": [
+        "Bold",
+        "Text 1 25",
+        "Background 1 -25",
+        "\"v\"@",
+        "Right",
+        "Body"
+      ]
+    },
+    "CellStyles": {
+      "1,1": 0,
+      "1,9": 1,
+      "3,1": 2
+    },
+    "SheetStyle": {
+      "FontFamily": 5,
+      "FontSize": -999.0
+    }
+  },
+  "Spans": [
+    "3,1,1,13",
+    "7,1,1,13",
+    "5,9,1,5",
+    "1,1,1,8",
+    "1,9,1,5"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.TemplatePage, ServerDesignerCommon",
+    "ParentPageName": "FGC_流程列表_手机版",
+    "IsMobilePage": true
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  }
+}//RjvfHl7DYf022Ib86pe/nim/rXcGQTClVmDTrVBoqy+UJoh7aSfXz25GH6ewriBYs7TtJwuHBExYFzux/mxARAxU8FNsy+9osU/gUiuiqEBJI7Wu1s9yzGlon8IP7xCL4IwJhwogmU3ixADk9WqzYHKupJN51l2eY9HOtiN7husBjdpq72QXLrBVYckoFX9widxFpkJnwLE27C0CRbCntbuJMigTCW4M5/zCIJIsYZ2if9ZWEFLEYY42DLhtZ+6cCsqYWvpbCjCi/A2jVIuLLtlnZ0mXN4oo+TL0GDNUnyIh9cBoanNhCJAK638o4trrs9mNbimoF2325D0Z+Emy0PZ7ti3RVB+ug2gOE9WHu4sWB3EQSEmzknnc5xHWC614YsvgBDXMHYlyBQmF0g3bPOrkEnyJloTyLrd142EpIdgjKM/Y+Gc04OA2xu6r5qFgV7z93OCUI3J8UtVHQfWIcOtCk5ZxPjovpdm1WMw5pM55qriaRFZrzL0/x1p+zjp19Ou9cQBGy2jvCe3M+vwpdSB1DzwjjwKCBmFe2vrjh0hsZ/UZKTpRkrRbSnunIS0mhr2uO+JbuBeU+zMLYdfHkaulSjgMXstaEidCiakAyTfs5qwzig/LMC57N7de9dC/HHcXz+j6ks2wkDKXWC5y6gY8YJq13zLVL9AUIF1Nr7lmJcZ7wCXgB1kKfAIDS71mDpQZVtSVKZCtsvC0vUDbWM3oMAptqflFeTtJ6dFYpT/9QUD6KlCEwEHpyCh9is/J9mr3C0TIWhOhBNJSjFp5xYWoLQp+4e57DxKhZhamud+xIKZ2C6L5hfpw+lLU22XcI6zbZUY+Yq63eVcCgkUs/UP7hiduw5C1Xl7vhrH/kQnLee2binGGejXFUj10F4M9E8BeDp8VZbz/oerazu+/oxPjudIFP6+NfzHc+AfGZaOSpA3pUwCecnEvuXIWWaHXYZeJV3M3mhio8PO2iyQWO+rNXOACCcAb5OnKrBlvgchuGCTHkxsw4YQp31WfieWpDN832umuOvS2pApUBfuFsrvAIXSW/Hi9mAVSWa/5qxe+p2L/2OKvSgpsQhRFTSfDa7496ZUp+297dciqPKv63KM3Zn6ty1KSX5w+VUOt5WGCWJOVEPk0X5c6iVmlIPsN5IPyTBQwDY13qXJybAaDia43A4sbHuGvohgR+2DdGtWv8SiSONg4zQgnezps/JECJRKFPdi3lA13mFB5FLEyB/SSL71Z8rnRDAxj4aO9MzePQxsvttsIW07sBnCfmxVzbpWsIZmGfBbHTclEUbDA37F0gCCY+FiJarV0TCJSh9gngwcMNp+O7Ac82JVBvYFWqK0o5ofy7nWFlu/tOlot44lZJqO8o5x0puzafZLfS+1nBwBPyVAvU8xzMdFKVRH7q1DPKoMyFvd8tEnoxq8Q7YYA/UgIaK/k58IXzk7vLojM1otuIFl9Y3hGMv7Lz7xeigshIPRN8nEg+t/cjho6zzvij8Vzx3Ysu3/9dC6+N+orb48n84SDrAA7h9k+Vp4w57hxF61yuFOyEvfNptyEcPAyAnYHAmCgAar2PQOWKSkhQVgtChXdYNONUux2YSLTr5sK2qZmy2VuTd7AyCiDlLhuhhjfpwHnVw8WU6xZwmT44PNoKPE956q3Db9QDKo5zb2MHyyeUE+SMnB55ihxaVQJauXSzvou3a6Uojqf3775pBaJRZx9y0yvxz1nj+HhLWDCC/Cpktut0ib3sUzVCcr+S2J5vllenN5ktp/BMNREjKDduGLDfBuv252Coxp1qNKxnWVbCVj4iZobKgtigXo1bzBMgPnqsRa++edHXfp5Bleuxr3Ji9yh8BMyQTvIXHcNSsN9007D8WHbq9sOh6I/sLvDKLIZ5hFU29+ufSaAkf472nYca8LzbLFA1AuU07w/t5MqUvo1WiRptmjCqw==|1944

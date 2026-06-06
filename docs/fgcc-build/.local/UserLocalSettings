@@ -1,0 +1,132 @@
+{
+  "ActiveSheetName": "history",
+  "CommandDialogSettings": {},
+  "DialogSettings": {
+    "COMMAND_DIALOG_SIZE": {
+      "$type": "Forguncy.Model.DialogAreaSize, Forguncy",
+      "DialogWidth": 1280.0,
+      "DialogHight": 747.3333333333333,
+      "CommandManageWidth": 275.0
+    }
+  },
+  "LocalSheetSettings": {
+    "review_record_": {
+      "IsOpen": true
+    },
+    "submit": {
+      "IsOpen": true,
+      "Selections": [
+        "8,2,9,13"
+      ]
+    },
+    "result": {
+      "IsOpen": true,
+      "Selections": [
+        "8,10,1,1"
+      ]
+    },
+    "history": {
+      "IsOpen": true,
+      "Selections": [
+        "4,19,1,1"
+      ],
+      "ViewportInfo": {
+        "TopRows": [
+          3
+        ]
+      }
+    }
+  },
+  "PageFolderWeights": {
+    "Pages\\内建页面": 1,
+    "FGC_登录": 1,
+    "FGC_401页面": 2,
+    "FGC_修改密码": 3,
+    "FGC_连接已断开": 4,
+    "FGC_忘记密码": 5,
+    "FGC_邮件订阅": 6,
+    "FGC_维护中": 7,
+    "FGC_两步验证_扫码页面": 8,
+    "FGC_两步验证_验证页面": 9,
+    "FGC_修改用户信息": 10,
+    "FGC_重置密码": 11,
+    "FGC_重置密码发送邮件成功": 12,
+    "Pages\\内建手机页面": 2,
+    "FGC_登录_手机版": 1,
+    "FGC_401页面_手机版": 2,
+    "FGC_修改密码_手机版": 3,
+    "FGC_连接已断开_手机版": 4,
+    "FGC_忘记密码_手机版": 5,
+    "FGC_邮件订阅_手机版": 6,
+    "FGC_维护中_手机版": 7,
+    "FGC_两步验证_扫码页面_手机版": 8,
+    "FGC_两步验证_验证页面_手机版": 9,
+    "FGC_修改用户信息_手机版": 10,
+    "FGC_重置密码发送邮件成功_手机版": 11,
+    "FGC_重置密码_手机版": 12,
+    "result": 3,
+    "Pages\\流程页面文件夹": 4,
+    "FGC_流程列表": 1,
+    "FGC_流程追踪": 2,
+    "FGC_审批记录": 3,
+    "FGC_任务详情": 4,
+    "FGC_我发起的": 5,
+    "FGC_我的待办": 6,
+    "FGC_我的已办": 7,
+    "FGC_我的待阅": 8,
+    "FGC_我的已阅": 9,
+    "FGC_我委托的": 10,
+    "Pages\\流程页面文件夹_手机版": 5,
+    "FGC_流程列表_手机版": 1,
+    "FGC_流程追踪_手机版": 2,
+    "FGC_审批记录_手机版": 3,
+    "FGC_任务详情_手机版": 4,
+    "FGC_我发起的_手机版": 5,
+    "FGC_我的待办_手机版": 6,
+    "FGC_我的已办_手机版": 7,
+    "FGC_我的待阅_手机版": 8,
+    "FGC_我的已阅_手机版": 9,
+    "FGC_我委托的_手机版": 10,
+    "submit": 6,
+    "history": 7
+  },
+  "SuppressedWarnings": [],
+  "ReportFolderWeights": {
+    "报表1": 1
+  },
+  "ProcessFolderWeights": {
+    "流程1": 1
+  },
+  "ServerCommandFolderWeights": {
+    "workflow": 1,
+    "retrieveJobDescription": 2,
+    "saveReviewRecordToDatabase": 3,
+    "agent": 4
+  },
+  "TableFolderWeights": {
+    "review_record_": 1,
+    "Tables\\流程数据表文件夹": 2,
+    "ACT_RE_PROCDEF_View": 1,
+    "ACT_HI_PROCINST_View": 2,
+    "ACT_HI_TASKINST_View": 3,
+    "ACT_RU_TASK_View": 4,
+    "ACT_HI_COMMENT_View": 5
+  },
+  "MasterPageFolderWeights": {
+    "FGC_母版页": 1,
+    "MasterPages\\流程母版页面文件夹": 2,
+    "FGC_流程中心": 1,
+    "FGC_流程中心_手机版": 2
+  },
+  "ImageFolderWeights": {
+    "image\\内置图片": 1,
+    "fgc_built-in-page-401.png": 1,
+    "fgc_built-in-page-maintained.png": 2,
+    "fgc_built_in_page_disconnected.png": 3,
+    "fgc_loading.gif": 4,
+    "fgc_logo_dark.png": 5
+  },
+  "ReportDesignerSettings": {
+    "报表1": "\"{\\\"rulers\\\":{\\\"show\\\":false,\\\"snapStep\\\":{\\\"cm\\\":0.5,\\\"in\\\":0.25}},\\\"sidebar\\\":{\\\"expandedCategoriesStates\\\":\\\"{}\\\",\\\"expandedEditorsStates\\\":\\\"{}\\\",\\\"propertiesMode\\\":\\\"advanced\\\",\\\"propertiesSort\\\":\\\"categorized\\\",\\\"width\\\":330},\\\"surface\\\":{\\\"gridSize\\\":\\\"0.25in\\\",\\\"showGrid\\\":true,\\\"snapToGrid\\\":false,\\\"snapToLines\\\":false,\\\"zoomFactor\\\":1},\\\"units\\\":\\\"cm\\\"}\""
+  }
+}

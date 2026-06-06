@@ -1,0 +1,53 @@
+{
+  "IntegrateWithOtherApplication": {
+    "Password": "Ql@cRQVIswv$"
+  },
+  "ShareCommandContainers": [],
+  "ListviewLoadingIndicatorSettings": {},
+  "ServerPropertySecurityID": "66fe0870-1997-4903-8096-005bd0aae5c0",
+  "GlobalProperties": [],
+  "WebSitePort": 23510,
+  "UserServicePort": 30254,
+  "BpmServerSchemaId": "65ca7cdd-6f34-4b61-b7cb-629ea28837a8",
+  "ProcessDataConnectionSet": {
+    "ExternalDatabaseId": ""
+  },
+  "NotAllowAnonymousAccessData": true,
+  "StartPage": "submit",
+  "StartDateFiscalYear": 1,
+  "BaseOnStartingMonth": true,
+  "MultipleLanguageSettings": {
+    "Languages": [
+      {
+        "Name": "cn",
+        "IsDefault": true,
+        "Description": "内置语言中文，不可删除",
+        "IsBuildIn": true,
+        "LanguageAttribute": "zh-cn",
+        "FontFamily": "Body"
+      },
+      {
+        "Name": "en",
+        "Description": "内置语言英文，不可删除",
+        "IsBuildIn": true,
+        "LanguageAttribute": "en",
+        "FontFamily": "Calibri"
+      }
+    ],
+    "PublicResource": {},
+    "RuntimeBuiltInResource": {
+      "FrontEndResources": {},
+      "ServerResources": {},
+      "ProcessDesignerResource": {},
+      "ProcessTrackerResource": {}
+    },
+    "PluginResource": {}
+  },
+  "AppAIModelSettings": {
+    "AIModels": []
+  },
+  "AppMCPConfigSettingEncrypt": "Ci5S0rjTn+rtTPKUu1oqNuv/nijsyU5OMGHJsrCXsb66nSlWB9gZSjWsrUyxtwB4CxjAVUFQivmJpbbaj/g/bDFDFWUS3dQOkUlieAvleLLmSDaEPvF2344zUM1brpCXhnUQPb/puZ7k2zE/5ihxtCVTZj0PuJvWMricwUVUPwH+iD6CTRV39xyqfKjv4mvC",
+  "ServerCommandsAsMCPServerSetting": {
+    "IsEnableMCPServer": true
+  }
+}

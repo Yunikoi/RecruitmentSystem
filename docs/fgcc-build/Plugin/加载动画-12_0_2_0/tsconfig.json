@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "target": "es5",
+    "lib": [
+      "ES2015",
+      "DOM",
+      "ES2016.Array.Include"
+    ],
+    "removeComments": true
+  },
+  "compileOnSave": true,
+  "include": [
+    "Resources/**/*",
+    "../../../Forguncy.Declaration/internal/Forguncy.Internal.d.ts",
+    "../../../Forguncy.Declaration/src/Forguncy.d.ts",
+    "../../../Forguncy.Declaration/src/Forguncy.Plugin.d.ts"
+  ]
+}

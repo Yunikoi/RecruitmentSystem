@@ -1,0 +1,24 @@
+﻿{
+"assembly": [
+"LoadingCommand.dll"
+],
+"javascript": [
+"Resources/LoadingCommand.js"
+],
+"css": [],
+"image": "Resources/PluginLogo.png",
+"description": "Support on and off loading animation.",
+"description_ja": "進捗インジケーターの表示と非表示を行うコマンドです。",
+"description_cn": "支持打开与关闭加载动画。",
+"description_kr": "페이지가 로딩될 때 나타나는 애니메이션을 켜거나 끌 수 있습니다.",
+"name": "LoadingAnimation",
+"name_cn": "加载动画",
+"name_ja": "進捗インジケーター",
+"name_kr": "페이지 로딩 애니메이션",
+"pluginType": "command",
+"guid": "c963d9ed-5dd4-4c72-ad45-6b343f31dff1",
+"version": "12.0.2.0",
+"dependenceVersion": "12.0.2.0",
+"bundleJavaScript": true,
+"bundleCSS": true
+}

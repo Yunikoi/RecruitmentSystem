@@ -1,0 +1,30 @@
+{
+  "assembly": [
+    "Forguncy.CustomMenu.dll"
+  ],
+  "javascript": [
+    "Resources/Utils/MenuStyleUtils.js",
+    "Resources/CellTypeStyleTemplateHelperBase.js",
+    "Resources/MenuCellTypeBase.js",
+    "Resources/ForguncyMenuCellType.js",
+    "Resources/ForguncyTreeCellType.js",
+    "Resources/ForguncyMobileMenuCellType.js",
+    "Resources/ForguncyIconMenuCellType.js",
+    "Resources/zTree/jquery.ztree.core.js"
+  ],
+  "css": [
+    "Resources/forguncyPluginCustomMenuStyle.css",
+    "Resources/zTree/forguncyPluginZTreeStyle.css"
+  ],
+  "image": "Resources/Images/Image.png",
+  "description": "Custom MenuCellType and TreeCellType.",
+  "name": "Menu and Treeview Cell Type",
+  "description_cn": "自定义菜单类型和树类型。",
+  "name_cn": "自定义菜单类型和树类型",
+  "pluginType": "cellType",
+  "guid": "48d899dd-63ce-48c2-83d4-2fb281905171",
+  "version": "12.0.2.0",
+  "dependenceVersion": "12.0.2.0",
+  "bundleJavaScript": true,
+  "bundleCSS": true
+}

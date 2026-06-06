@@ -1,0 +1,418 @@
+{
+  "Rows": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "2": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      }
+    },
+    "Count": 5,
+    "DefaultSize": 10.0
+  },
+  "Cols": {
+    "RowColumnAttachedInfos": {
+      "0": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      },
+      "1": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "2": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "3": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "4": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "5": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "6": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "7": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "8": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "9": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "10": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "11": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "12": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "13": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "14": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "15": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "16": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "17": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 20.0,
+          "Mode": 2,
+          "MinLength": {
+            "Unit": 1
+          },
+          "MaxLength": {
+            "Value": 1.0
+          }
+        }
+      },
+      "18": {
+        "GridRowColumnDefinition": {
+          "DesignLengthInPixel": 10.0
+        }
+      }
+    },
+    "Count": 19
+  },
+  "AttachInfos": {
+    "1,1": {
+      "TemplateCellSource": "流程标题"
+    },
+    "1,9": {
+      "TemplateCellSource": "任务名称"
+    },
+    "3,1": {
+      "TemplateCellSource": "发起人"
+    },
+    "3,9": {
+      "TemplateCellSource": "创建时间"
+    }
+  },
+  "StyleDatas": {
+    "Styles": [
+      {
+        "FontSize": 13.333333333333332,
+        "FontWeight": 0,
+        "Foreground": 1
+      },
+      {
+        "FontFamily": 2,
+        "FontSize": 13.333333333333332,
+        "FontWeight": 0,
+        "Foreground": 3,
+        "HorizontalAlignment": 4,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontFamily": 2,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontSize": 13.333333333333332,
+        "HorizontalAlignment": 4
+      },
+      {
+        "FontSize": 13.333333333333332,
+        "Foreground": 5
+      },
+      {
+        "FontFamily": 2,
+        "FontSize": 13.333333333333332,
+        "Foreground": 5,
+        "Formatter": 6,
+        "HorizontalAlignment": 4,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontFamily": 2,
+        "FontSize": 13.333333333333332,
+        "Formatter": 6,
+        "HorizontalAlignment": 4
+      },
+      {
+        "FontSize": 13.333333333333332,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontSize": 13.333333333333332
+      },
+      {
+        "FontFamily": 2,
+        "FontSize": 13.333333333333332,
+        "HorizontalAlignment": 7,
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      },
+      {
+        "FontFamily": 2,
+        "FontSize": 13.333333333333332,
+        "HorizontalAlignment": 7
+      },
+      {
+        "BorderBottom": null,
+        "BorderTop": null,
+        "BorderLeft": null,
+        "BorderRight": null
+      }
+    ],
+    "Types": {
+      "Strs": [
+        "Bold",
+        "Text 1 25",
+        "Body",
+        "Accent 1 0",
+        "Right",
+        "Background 1 -25",
+        "yyyy/MM/dd hh:mm:ss",
+        "Left"
+      ]
+    },
+    "CellStyles": {
+      "1,1": 0,
+      "1,9": 1,
+      "1,14": 2,
+      "1,15": 2,
+      "1,16": 2,
+      "1,17": 2,
+      "1,18": 3,
+      "3,1": 4,
+      "3,9": 5,
+      "3,14": 2,
+      "3,15": 2,
+      "3,16": 2,
+      "3,17": 2,
+      "3,18": 6,
+      "4,1": 7,
+      "4,2": 7,
+      "4,3": 8,
+      "4,4": 8,
+      "4,5": 8,
+      "4,6": 7,
+      "4,9": 9,
+      "4,10": 10,
+      "4,11": 10,
+      "4,12": 10,
+      "4,13": 10,
+      "4,14": 9,
+      "4,15": 9,
+      "4,16": 9,
+      "4,17": 9,
+      "4,18": 10
+    },
+    "RowStyles": {
+      "2": 11
+    },
+    "SheetStyle": {
+      "FontFamily": 2,
+      "FontSize": -999.0,
+      "BorderBottom": null,
+      "BorderTop": null,
+      "BorderLeft": null,
+      "BorderRight": null
+    }
+  },
+  "Spans": [
+    "1,1,1,8",
+    "3,9,1,9",
+    "1,9,1,9",
+    "3,1,1,8"
+  ],
+  "PageInfo": {
+    "$type": "Forguncy.Model.Pages.TemplatePage, ServerDesignerCommon",
+    "ParentPageName": "FGC_我的待阅_手机版",
+    "IsMobilePage": true
+  },
+  "PrintInfo": {
+    "PaperSize": {},
+    "Margin": {}
+  }
+}//wvI+dvsqK5fZqYG+BZsH4mt2vQndHu+7lnJvl47MuqVXs+kjLZw/SetVH27b+ZN/qpJx07+U6ar5xs37nyPxNgQo3hoVuB1ySO9lTvQA9hj75U+F/svYgeGXaY7yVlFpICuFZRjhbbNxbUgGRMGK5uc4shkyTabbb+6RRzkJg+5mZj/+BW3ntI74sq7Ukvon45BQkbI0y60VgnEDxmewEImi6W9K9C1kSDLCjc+sKQ77z/jXrdXAn55MTi61UR3fANobfbk8mlZKhaZNvd+PqfEqThIPUVvwzf6hyx4L75dwSiZUjXSkESchvDDi4fE/jg62Zrk7bWLpM+YAiQsaXWZOWnmDiH0B8vcmOihHfIkC8QYJCsKRgWgw/g6ViNwCg1vJpUHo9aSgfih/Y1afheJWizAWNawhzcFb1/phoByGSRWJztGq0UA2OMMDo6dxdn6cowyR7pcwdce0nJkA6kIjRQ5c3Q4TQ64zAnfyxJafgOjvjEsafrr8ccikWoigbO1nl6seXiFur+UBYnO55UIuF1MPVk3LX5EOH/L/AyvrhymydgVbDLRInRXmsN4aKJ795R9hkEYoCmbiRP/rDBigJ6d3gzPw7rCeMcBBdb6mOKmLlS0lbals8XUfnEwl1zm1wV68fsE/l3iMImJIWy82IXJh33NM7PBABlxcT/aTmGS+JyWO9qssMXO/rqGxSdJn+r6F9zPSbw9tqESWwbIYmUc7D1Ncelwwt5WET0UWLIAFyr+N0yHKaNcpfMpZrrfIQTleAK66ecNKdG2h/0IMrVI4L8ZiQVWWm7Puej8c87g27ddjwdY99j6Z1ekKLrNUmEyCalBXErunfvkW5pcP4yHMJSroun1wsu1fIqifzM+bcmN4Rv8tbeuxtYlHcsaRYvpmOE01ujdC/Js8b6qKFOhmGqm5EzsDnmBb/CdBDRUngecwGunif7QZRwmJDNgepGbLs/kW40fLue+eMt1brL4sGLaiO0hiJMW6aBQ8fCCu/iBh6Cihh7NdAW7CLhQbHT5SKayNnZ/VWE2C7jF/v2yjTuBPxu+V4a+PvQQ+6uDZPOn1rG1gWhX2QsfOD7pt0zQWNA+fIzkmpbKsQN7BGdg/10ghYnDyEGI9Qab0DxcigqHV41KNYUvBOXPa/iGvmpfdaUnuaUSGnHpfbdhoRGk7L3/jp+P7wqtnBdl+S4IrIffEwqz6eU9zpTKIY7o5X3VKh6m4fRr1rNsRW+zemoRQSg6tgXH8vx9NeoKZWXJj96ip468MmqsVwvvxiptA+iNJiGNRsTYIRVfgpkJ6uqK1ExBTTHSWpaDg1RyQ69TP+re5QAXSqhdxwfkXgBz6DOsVWk9Lv9Jnm/ir40sX6gtLZHBSr3gxMx+0DnRoCQHyFHL+dc+kiHOpaJ8MxOcdukUnHFh1mBCLrAxoUCasEP7eexliY89ddvHHbPb0fHDFJWuwmqarkmMDZLpt0C+eEZ+UmzhJ3JpakodwJNkhslWvndtYdyhrpaHxRvkSFBtXVLBejoTNghgKTVIDrOlfIqhFGLKoF/jftiTbogWStzBMnKiK7SIj/7QqF/jLhTUS/SZL94Pnwy73Pbx+6HgE7dfmJw1WW9tdl7faB7TcEdPkGXXuuYmmkmmYgjZ6evuwbij6Ck9Nk+G9uLqH0ACUquzZUUPLbv/HMoYZOu/FF+i1EgMA8Sy3q5AuwzcHv3NGdVw6YNPpiuCYFU9JivIMO3sWj89hrWU+3rYCdYMaVeoF6eK6Qz0BeIsidKlJ8HOOeVAtSEY+NkihJPb4vvYlmxpATL2+1eCthDPIyW6/9oOBHIEEI5FTC2V1J4FexKJHBIZQNPsw+GvcuFYD9SUwG+dwlah1MSXGlqoQmmg5JCJd0/6OYbcOWpijU4U62o76m3qE5TBQJKcEcrEjzDN9T0jy+2WrIFqZ7Re4fA==|1944

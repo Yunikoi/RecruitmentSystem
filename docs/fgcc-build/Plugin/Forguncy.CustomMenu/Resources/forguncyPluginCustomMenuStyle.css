@@ -1,0 +1,137 @@
+﻿.menuContainer {
+    display: inline-block;
+    min-width: 100%;
+    max-height: 100%;
+    vertical-align: top;
+}
+
+    .menuContainer.horizontal {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .menuContainer li, .menuContainer ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        vertical-align: top;
+    }
+
+        .menuContainer li > a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .menuContainer ul li i {
+            transition: 0.1s;
+        }
+
+            .menuContainer ul li i.down {
+                transform: rotate(90deg);
+            }
+
+.mobileMenuContainer, .iconMenuContainer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #ddd;
+}
+
+    .mobileMenuContainer ul, .iconMenuContainer ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobileMenuContainer > ul > li {
+        box-sizing: border-box;
+        border-right: 1px solid #ececec;
+    }
+
+        .mobileMenuContainer > ul > li:last-child {
+            border-right-width: 0px;
+        }
+
+    .mobileMenuContainer ul > li, .iconMenuContainer ul > li {
+        text-align: center;
+    }
+
+        .mobileMenuContainer ul > li > ul > li {
+            text-align: left;
+        }
+
+        .mobileMenuContainer ul > li > a:active, .mobileMenuContainer ul > li > a:focus, .mobileMenuContainer ul > li > a:visited,
+        .iconMenuContainer ul > li > a:active, .iconMenuContainer ul > li > a:focus, .iconMenuContainer ul > li > a:visited {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            background: none;
+            text-decoration: none;
+        }
+
+    .iconMenuContainer span.menuIcon {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .iconMenuContainer span.menuText {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    .mobileMenuContainer .mobilearrow {
+        position: absolute;
+        bottom: 3px;
+        right: 3px;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-right: 10px solid #c1c1c1;
+        opacity: 0.3;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .mobileMenuContainer ul li ul {
+        list-style: none;
+        box-shadow: 0px 0px 20px 0px #ddd;
+    }
+
+        .mobileMenuContainer ul li ul li {
+            padding: 5px 10px;
+            border-bottom: 1px solid #ececec;
+        }
+
+            .mobileMenuContainer ul li ul li:last-child {
+                border-bottom: 0;
+            }
+
+            .mobileMenuContainer ul li ul li a {
+                text-overflow: ellipsis;
+            }
+
+/* 样式抽取 */
+.fgc-plugin-menu-icon {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fgc-plugin-menu-arrow {
+    position: relative;
+    cursor: default;
+}
+
+.fgc-plugin-menu-icontextwrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.treeContainer .ztree li a {
+    padding: 0 3px;
+    margin: 1px;
+    vertical-align: middle;
+}

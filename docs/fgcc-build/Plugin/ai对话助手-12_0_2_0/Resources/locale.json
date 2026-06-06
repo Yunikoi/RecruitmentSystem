@@ -1,0 +1,274 @@
+{
+    "newChat": {
+        "en": "New Chat",
+        "cn": "新建对话"
+    },
+    "exampleRequest": {
+        "en": "Hello World",
+        "cn": "你好世界"
+    },
+    "exampleResponse": {
+        "en": "Hello! It\\'s great to see you. How can I assist you today? If you have any questions or need help with anything, feel free to let me know!",
+        "cn": "你好！很高兴见到你。今天我能为你做些什么呢？如果你有任何问题或需要帮助，随时告诉我！"
+    },
+    "Waiting": {
+        "en": "Waiting...",
+        "cn": "等待中..."
+    },
+    "FailedFallBack": {
+        "en": "Return failed. Please try again later.",
+        "cn": "请求返回失败。请稍后再试"
+    },
+    "Stop": {
+        "en": "Stop",
+        "cn": "停止"
+    },
+    "NewChatHint": {
+        "en": "Create new chat will clear the previous context.",
+        "cn": "新建对话会清空之前的上下文。"
+    },
+    "AiAssistantChat_Ok": {
+        "en": "OK",
+        "cn": "确定"
+    },
+    "AiAssistantChat_Cancel": {
+        "en": "Cancel",
+        "cn": "取消"
+    },
+    "OnMessageType": {
+        "cn": "类型",
+        "en": "Sender"
+    },
+    "OnMessageMessage": {
+        "cn": "内容",
+        "en": "Content"
+    },
+    "OnMessageCommandHistory": {
+        "cn": "历史消息列表",
+        "en": "HistoryMessageList"
+    },
+    "OnMessageCommandAttachments": {
+        "cn": "文件内容",
+        "en": "FileContent"
+    },
+    "OnMessageCommandIsAborted": {
+        "cn": "是否被中断",
+        "en": "IsAborted"
+    },
+    "OnMessageCommandToolCallMessage": {
+        "cn": "工具调用消息列表",
+        "en": "ToolCallMessages"
+    },
+    "ExecuteFunction": {
+        "cn": "执行操作：",
+        "en": "Execute Function:"
+    },
+    "newMessageParam": {
+        "cn": "新消息",
+        "en": "NewMessage"
+    },
+    "functionExecutionCancelled": {
+        "cn": "操作执行被用户取消...",
+        "en": "Function execution cancelled by user..."
+    },
+    "tryExecuteFunction": {
+        "cn": "尝试执行操作:",
+        "en": "Try to execute function:"
+    },
+    "butParseFunctionParameterError": {
+        "cn": "但是解析参数错误。",
+        "en": "But parse function parameter error."
+    },
+    "theStringTryToParse": {
+        "cn": "尝试解析的字符串:",
+        "en": "The string try to parse:"
+    },
+    "copySuccess": {
+        "cn": "复制成功",
+        "en": "Copy Success"
+    },
+    "paramNotMatch": {
+        "cn": "参数不匹配,未传入参数:",
+        "en": "Param not match, not pass param:"
+    },
+    "requestError": {
+        "cn": "请求失败，状态码: {0}, 状态文本: {1}",
+        "en": "Request Error, Status Code: {0}, Status Text: {1}"
+    },
+    "inputQuestionTextLengthLimit": {
+        "cn": "输入的问题长度超过限制",
+        "en": "Input question text length limit"
+    },
+    "executeFunctionCall": {
+        "cn": "执行函数调用：",
+        "en": "Execute function call: "
+    },
+    "querying": {
+        "cn": "请求处理中...",
+        "en": "Querying..."
+    },
+    "userInput": {
+        "cn": "用户输入",
+        "en": "User Input"
+    },
+    "assistantResponse": {
+        "cn": "助手响应",
+        "en": "Assistant Response"
+    },
+    "functionCall": {
+        "cn": "函数调用开始",
+        "en": "Function Call Start"
+    },
+    "functionParameters": {
+        "cn": "函数参数",
+        "en": "Function Parameters"
+    },
+    "functionCallSuccess": {
+        "cn": "函数{{0}}调用成功",
+        "en": "Function {{0}} call success"
+    },
+    "functionCallResult": {
+        "cn": "函数调用结果",
+        "en": "Function Call Result"
+    },
+    "modelName": {
+        "cn": "模型名称",
+        "en": "Model Name"
+    },
+    "chatList": {
+        "cn": "发送给AI服务器的消息列表",
+        "en": "List of messages sent to AI server"
+    },
+    "userPromptLogLabel": {
+        "cn": "用户提示词",
+        "en": "User Prompt"
+    },
+    "promptLogLabel": {
+        "cn": "系统提示词",
+        "en": "System Prompt"
+    },
+    "AiAssistantChat_language": {
+        "cn": "cn",
+        "en": "en"
+    },
+    "parseFollowUpQuestionError": {
+        "cn": "用户问题建议返回值解析错误，原返回值: ",
+        "en": "User question suggestion return value parsing error, original return value: "
+    },
+    "ExecuteMCPFunction": {
+        "cn": "执行MCP工具：",
+        "en": "Execute MCP Tool:"
+    },
+    "functionCallArgs": {
+        "cn": "参数",
+        "en": "Arguments"
+    },
+    "functionCallReturnValue": {
+        "cn": "返回值",
+        "en": "Return Value"
+    },
+    "mcpCallReturnValue": {
+        "cn": "MCP返回值： ",
+        "en": "MCP Return Value:"
+    },
+    "callMCPError": {
+        "en": "call mcp error",
+        "cn": "调用MCP错误"
+    },
+    "unknownMCPResponseType": {
+        "en": "unknown mcp response type",
+        "cn": "未知MCP响应类型"
+    },
+    "parseStreamDataError": {
+        "en": "parse stream data error: {0} | Raw data: {1}",
+        "cn": "解析流数据失败: {0} | 原始数据: {1}"
+    },
+    "MCPToolName": {
+        "en": "MCPToolName",
+        "cn": "MCP工具名"
+    },
+    "MCPFunctionName": {
+        "en": "FunctionName",
+        "cn": "函数名"
+    },
+    "MCPParameters": {
+        "en": "Parameters",
+        "cn": "参数"
+    },
+    "MCPReturnValue": {
+        "en": "ReturnValue",
+        "cn": "返回值"
+    },
+    "mcpCallStart": {
+        "cn": "MCP调用开始",
+        "en": "MCP Call Start"
+    },
+    "mcpCallArgs": {
+        "cn": "MCP参数",
+        "en": "MCP Arguments"
+    },
+    "mcpExecutionTerminated": {
+        "cn": "mcp的执行被终止",
+        "en": "MCP execution terminated"
+    },
+    "toolCallInterrupted": {
+        "cn": "用户手动取消了该工具调用请求，请跳过此步骤并继续后续任务。",
+        "en": "User manually interrupted the tool call request, please skip this step and continue with the subsequent tasks."
+    },
+    "file": {
+        "en": "File",
+        "cn": "文件"
+    },
+    "fileName": {
+        "en": "FileName",
+        "cn": "文件名"
+    },
+    "attachmentValue": {
+        "en": "AttachmentValue",
+        "cn": "附件值"
+    },
+    "fileContent": {
+        "en": "File Content",
+        "cn": "文件内容"
+    },
+    "pasteFileTypeNotSupported": {
+        "en": "File type not supported for paste: {0}",
+        "cn": "不支持粘贴该文件类型：{0}"
+    },
+    "OnLinkClickCommandUrl": {
+        "cn": "链接地址",
+        "en": "LinkUrl"
+    },
+    "OnLinkClickCommandText": {
+        "cn": "链接文本",
+        "en": "LinkText"
+    },
+    "unsafeLinkModalTitle": {
+        "cn": "安全警告",
+        "en": "Security Warning"
+    },
+    "unsafeLinkModalContent": {
+        "cn": "检测到此链接存在安全风险，已自动拦截。如需访问，请复制链接后手动在浏览器中打开。",
+        "en": "This link has been blocked due to security risks. If you need to access it, please copy the link and open it manually in your browser."
+    },
+    "copyLink": {
+        "cn": "复制链接",
+        "en": "Copy Link"
+    },
+    "toolMessageDroppedLog": {
+        "cn": "工具消息已丢失，因为未找到对应的包含工具调用的AI消息。",
+        "en": "Tool message dropped because no corresponding AI message with tool calls was found."
+    },
+    "attachmentQuestionTemplate": {
+        "en": "File Name: {0}\nFile Content: {1}",
+        "cn": "文件名: {0}\n文件内容: {1}"
+    },
+    "confirmExecuteTool": {
+        "en": "Confirm to execute \"{0}\"?",
+        "cn": "确认执行\"{0}\"？"
+    },
+    "functionCancelledInExecution": {
+        "cn": "函数执行中被终止。",
+        "en": "The function was terminated during execution."
+    }
+}

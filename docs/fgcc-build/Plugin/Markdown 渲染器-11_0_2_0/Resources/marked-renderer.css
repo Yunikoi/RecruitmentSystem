@@ -1,0 +1,54 @@
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #d0d7de;
+  padding: 6px 13px;
+}
+
+.markdown-body tr {
+  background-color: #fff;
+  border-top: 1px solid #d0d7de;
+}
+
+.markdown-body tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+
+.markdown-body :not(pre)>code {
+  background-color: rgba(175, 184, 193, 0.2);
+  color: #24292f;
+  font-size: 85%;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  border-radius: 6px;
+}
+
+.markdown-body pre>code {
+    border-radius: 6px;
+    font-size: larger;
+    background: #F6F8FA;
+}
+
+.markdown-body hr {
+  height: 1px;
+  border: 0;
+  background-color: #d0d7de;
+  margin: 24px 0;
+}

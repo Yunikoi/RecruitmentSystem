@@ -1,0 +1,41 @@
+TalentFlow ATS 活字格工程（完整三端）
+第八组：刘沛秋、邱尹鸿、冯逸凡、王天睿
+
+【打开方式】
+1. 用活字格设计器打开 TalentFlow-ATS.fgcc
+2. 本地运行调试，默认端口 23510，首页 submit（AI 简历初筛）
+
+【重要】
+新增页面（public_positions、recruiter_pipeline 等）为已签名模板副本，打开后
+请在设计器中将各页 ListView 绑定到对应数据表并保存（保存后活字格会重新签名）。
+
+【页面列表】
+
+C端 · 求职者
+  public_positions      公开岗位浏览
+  candidate_applications 我的投递进度
+  candidate_ai_interview AI初试说明
+  submit / result / history  AI简历初筛
+
+B端 · HR/面试官
+  recruiter_pipeline     招聘漏斗（可列表内编辑阶段）
+  recruiter_interviews   面试安排
+  recruiter_evaluations  面评记录
+  recruiter_talent_pool  人才库
+
+M端 · 管理层
+  management_dashboard   管理驾驶舱
+  statistics             数据统计
+
+部门 · 岗位管理
+  dept_positions         岗位 CRUD 列表
+  dept_import            Excel 导入说明
+
+【数据表】
+  position_ / application_ / interview_ / interview_evaluation_
+  talent_pool_ / dashboard_stat_ / sys_user_ / review_record_
+
+【与 Spring Boot 版】
+  业务模型一致，示例数据对齐 DataInitializer。
+  AI 音视频面试、Excel 导入、复杂图表等高级功能请用 start-all.bat 启动完整版。
+  测试账号：candidate/candidate123  admin/admin123  executive/exec123

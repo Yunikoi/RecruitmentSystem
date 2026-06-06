@@ -1,0 +1,191 @@
+{
+  "$type": "Forguncy.SaveLoad.ServerCommandSaveData, ServerDesignerCommon",
+  "Name": "workflow",
+  "Enabled": true,
+  "Triggers": {
+    "$type": "System.Collections.Generic.List`1[[Forguncy.SaveLoad.TriggerSaveDataBase, ServerDesignerCommon]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "Forguncy.SaveLoad.PostRequestTriggerSaveData, ServerDesignerCommon",
+        "Permission": {
+          "$type": "Forguncy.SaveLoad.ServerCommandPermissionSaveData, ServerDesignerCommon",
+          "PermissionData": {
+            "$type": "Forguncy.RbacPermission.Core.Impl.ServerCommand.ServerCommandPermissionData, Forguncy.RbacPermission.Core",
+            "permissionResource": {
+              "$type": "Forguncy.RbacPermission.Core.Impl.ServerCommand.ServerCommandPermissionResource, Forguncy.RbacPermission.Core"
+            },
+            "permissionBindings": {
+              "$type": "System.Collections.Generic.List`1[[Forguncy.RbacPermission.Core.Impl.ServerCommand.IServerCommandPermissionBinding, Forguncy.RbacPermission.Core]], System.Private.CoreLib",
+              "$values": [
+                {
+                  "$type": "Forguncy.RbacPermission.Core.Impl.ServerCommand.ServerCommandPermissionBinding, Forguncy.RbacPermission.Core",
+                  "roleNames": {
+                    "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+                    "$values": [
+                      "FGC_LoginUser",
+                      "FGC_Anonymous"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "Parameters": {
+          "$type": "System.Collections.Generic.List`1[[Forguncy.SaveLoad.PostRequestParameterSaveData, ServerDesignerCommon]], System.Private.CoreLib",
+          "$values": [
+            {
+              "$type": "Forguncy.SaveLoad.PostRequestParameterSaveData, ServerDesignerCommon",
+              "Name": "resume",
+              "DataValidationInfo": {
+                "$type": "Forguncy.SaveLoad.DataValidationInfoSaveData, ServerDesignerCommon"
+              },
+              "TestData": "个人简历 \r\n姓名： 张三 \r\n邮箱： \r\nzhangsan@stu.xidian.edu.cn | 电话： 18066666667  \r\n教育背景 \r\n西安电子科技大学 | 计算机科学与技术学院 \r\n本科 | 智能化软件工程微专业 | 预计毕业：2027.06  \r\n个人简介 \r\n计算机科学与技术专业本科生，具备扎实的 Java 后端开发基础与 AI 应用落地能力。对大模型应用开发\r\n（LLM App）有浓厚兴趣，熟悉 Agent 架构与 RAG（检索增强生成）流程。 \r\n能够基于 Spring Boot 构建稳定的数据服务，并通过 MCP 协议实现大模型与业务系统的集成，具备从后端\r\n开发到 AI 功能落地的综合实践能力。\r\n专业技能 \r\n后端开发： Java, Spring Boot, RESTful API, MySQL, H2  \r\nAI 技术： Agent 架构, MCP 协议, Prompt 设计与调优, RAG 流程  \r\n工具与协作： Git, Maven, 敏捷开发概念  \r\n语言能力： 英语六级 (CET-6)，具备良好的英文技术文档阅读能力  \r\n项目经验 \r\nAI驱动的招聘管理平台 | 2026.05 – 2026.06 \r\n技术栈： Java, Spring Boot, H2, MCP 协议 \r\n项目描述： 针对缺乏专业领域知识的人事招聘专员进行简历筛选时效率低的问题，设计并实现了智能化招聘\r\n辅助系统。后端基于 Spring Boot 提供数据服务，并通过 MCP 协议实现大模型与本地数据库的安全交互，\r\n完成简历与岗位的自动匹配。\r\n核心职责与技术实现：\r\n后端服务开发： 独立使用 Spring Boot 设计并实现了岗位管理等核心模块的 RESTful API。  \r\nMCP 服务端实现： 基于 MCP 协议自建数据适配层，解决了大模型无法直接访问本地数据库的问题，\r\n使 AI 能够实时查询岗位描述等私有数据。  \r\nAgent 逻辑设计： 设计并调优了简历评审 Agent 的 Prompt 流程，引导大模型根据岗位要求自动提取\r\n简历关键信息（技能、项目经验等），并对匹配度进行初步评分。  \r\n系统集成： 完成 Spring Boot 后端与 Agent 的接口联调，实现从简历上传、AI 初筛到结果入库的自动\r\n化处理。"
+            }
+          ]
+        },
+        "InvokeTriggerTestData": {
+          "$type": "Forguncy.SaveLoad.InvokeTriggerTestDataSaveData, ServerDesignerCommon",
+          "UserName": "任何人"
+        }
+      }
+    ]
+  },
+  "Commands": {
+    "$type": "System.Collections.Generic.List`1[[GrapeCity.Forguncy.Commands.Command, Forguncy.Commands]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "PostDataToWebApi.PostDataCommand, PostDataToWebApi",
+        "PostData": {
+          "$type": "PostDataToWebApi.DataItem, PostDataToWebApi",
+          "DataItemType": 1,
+          "Data": {
+            "$type": "PostDataToWebApi.ObjectData, PostDataToWebApi",
+            "Data": {
+              "$type": "System.Collections.Generic.List`1[[PostDataToWebApi.DataItem, PostDataToWebApi]], System.Private.CoreLib",
+              "$values": []
+            }
+          }
+        },
+        "WebUrl": "http://localhost:8080/webapi/positions",
+        "Method": "GET",
+        "SuccessCallback": "// 请求成功返回的数据存储在“result”变量中\n// 请使用“result”变量来完成请求成功的回调 \r\n//console.log(result);",
+        "ErrorCallback": "// 请求中发生的错误存储在“error”变量中\n// 请使用“error”变量来处理异常情况 \r\nconsole.error(error);",
+        "NewParameter": "岗位描述数据",
+        "Header": {
+          "$type": "System.Collections.Generic.List`1[[PostDataToWebApi.RequestHeaderSaveAndLoad, PostDataToWebApi]], System.Private.CoreLib",
+          "$values": []
+        },
+        "Timeout": 100.0,
+        "BreakpointIdentity": "3ebf58fa-b541-40b6-ba7b-6b6a99e0056f"
+      },
+      {
+        "$type": "AiAssistantChat.AiAssistantChatServerCommand, AiAssistantChat",
+        "ResultTo": "处理结果",
+        "AiModel": "deepseekv4",
+        "UserPromptLink": "你是人事部的招聘专员，请基于岗位描述做审\r\n查，给出最匹配的岗位和面试建议。仅输出\r\nMarkdown 格式的评审报告。 \r\nresume:[=resume] \r\n岗位描述数据:[=岗位描述数据] ",
+        "FunctionDefinitionList": {
+          "$type": "System.Collections.Generic.List`1[[GrapeCity.Forguncy.Plugin.INamedObject, GrapeCity.Forguncy.Plugin]], System.Private.CoreLib",
+          "$values": []
+        },
+        "TestButton": {
+          "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.Object, System.Private.CoreLib]], System.Private.CoreLib",
+          "resume": {
+            "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+            "$values": [
+              "会java，springboot",
+              "0"
+            ]
+          },
+          "岗位描述数据": {
+            "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+            "$values": [
+              "后端",
+              "0"
+            ]
+          },
+          "FGC_BUILD_IN_CONFIG_USER_NAME": "任何人",
+          "FGC_BUILD_IN_CONFIG_TIME_OUT": "100"
+        },
+        "UsageResultTo": "用量",
+        "Timeout": 999,
+        "BreakpointIdentity": "27b47614-a569-4569-bd2d-5b97004b40f0"
+      },
+      {
+        "$type": "Forguncy.Model.UpdateDataTableCommand, ServerDesignerCommon",
+        "TableName": "review_record_",
+        "UpdateType": "add",
+        "UpdateBindingValues": {
+          "$type": "System.Collections.Generic.List`1[[Forguncy.Model.UpdateBindingValueItem, ServerDesignerCommon]], System.Private.CoreLib",
+          "$values": [
+            {
+              "$type": "Forguncy.Model.UpdateBindingValueItem, ServerDesignerCommon",
+              "BindingInfo": {
+                "$type": "ForguncyDataAccess.BindingInfo, ForguncyDataAccess",
+                "TableName": "review_record_",
+                "ColumnName": "resume",
+                "GUID": "e6dba8fa-0239-42a9-94b6-89bdba05edbc"
+              },
+              "Value": {
+                "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+                "SerializeProperty": "=resume"
+              }
+            },
+            {
+              "$type": "Forguncy.Model.UpdateBindingValueItem, ServerDesignerCommon",
+              "BindingInfo": {
+                "$type": "ForguncyDataAccess.BindingInfo, ForguncyDataAccess",
+                "TableName": "review_record_",
+                "ColumnName": "result",
+                "GUID": "14de88fc-1fa9-4390-9e46-62a1598ba1bd"
+              },
+              "Value": {
+                "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+                "SerializeProperty": "=处理结果"
+              }
+            }
+          ]
+        },
+        "BreakpointIdentity": "32431e47-7c6f-463f-9fe8-4615d3ac35b8"
+      },
+      {
+        "$type": "Forguncy.Model.ReturnCommand, ServerDesignerCommon",
+        "CustomReturns": {
+          "$type": "System.Collections.Generic.List`1[[Forguncy.Model.CustomReturns, ServerDesignerCommon]], System.Private.CoreLib",
+          "$values": [
+            {
+              "$type": "Forguncy.Model.CustomReturns, ServerDesignerCommon",
+              "ReturnPropertyName": "result",
+              "Value": {
+                "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+                "SerializeProperty": "=处理结果"
+              }
+            },
+            {
+              "$type": "Forguncy.Model.CustomReturns, ServerDesignerCommon",
+              "ReturnPropertyName": "cost",
+              "Value": {
+                "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+                "SerializeProperty": "=用量.InputTokenCount+用量.OutputTokenCount"
+              }
+            }
+          ]
+        },
+        "BreakpointIdentity": "fd0a6492-f71b-4473-b119-5c5802578ceb"
+      }
+    ]
+  },
+  "ReturnProperties": {
+    "$type": "System.Collections.Generic.List`1[[Forguncy.SaveLoad.ReturnPropertySaveData, ServerDesignerCommon]], System.Private.CoreLib",
+    "$values": [
+      {
+        "$type": "Forguncy.SaveLoad.ReturnPropertySaveData, ServerDesignerCommon",
+        "Name": "result"
+      },
+      {
+        "$type": "Forguncy.SaveLoad.ReturnPropertySaveData, ServerDesignerCommon",
+        "Name": "cost"
+      }
+    ]
+  }
+}

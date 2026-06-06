@@ -1,0 +1,43 @@
+﻿{
+"assembly": [
+"AiAssistantChat.dll"
+],
+"css": [],
+"javascript": [
+"Resources/FrontEndCommand.js"
+],
+"serverApiAssembly": [],
+"image": "Resources/PluginLogo.png",
+"description": "ai chat assistant",
+"description_cn": "AI对话助手包含AI对话单元格，AI助手命令。可对接多种大语言模型，通过智能互动和命令执行能力，提升您的工作效率并简化日常任务，比如智能分析，自然语言的查询等等。",
+"name": "ai chat assistant",
+"name_cn": "ai对话助手",
+"pluginType": "cellType,command",
+"guid": "2c47c1cd-9ade-4f31-9567-a13157c6a639",
+"version": "12.0.2.1",
+"dependenceVersion": "12.0.2.0",
+"bundleJavaScript": false,
+"bundleCSS": false,
+"locale": "Resources/locale.json",
+"modularFrontend": {
+"dir": "aiAssistant",
+"devServer": {
+"enable": false,
+"port": 5173,
+"main": "Index.ts",
+"loader": "dev-loader.js",
+"autoStart": {
+"enable": true,
+"npmScript": "dev",
+"useRandomPort": true
+}
+},
+"output": {
+"js": "Resources/js/aiAssistant.js"
+}
+},
+"custom_config": {
+"debug": false,
+"dist": "Resources/dist"
+}
+}

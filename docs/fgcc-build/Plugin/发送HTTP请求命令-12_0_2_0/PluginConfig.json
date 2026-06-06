@@ -1,0 +1,25 @@
+﻿{
+"assembly": [
+"PostDataToWebApi.dll"
+],
+"javascript": [
+"Resources/SendHTTPRequestCommand.js"
+],
+"css": [],
+"image": "Resources/PluginLogo.png",
+"description": "Support to post json-format data to remote web API.",
+"description_cn": "支持向远程WEB API发送JSON格式的数据。",
+"description_ja": "指定するURLに対してHTTPリクエストを送信します。",
+"description_kr": "JSON 형식의 데이터를 원격 Web API로 보내는 기능을 사용하실 수 있습니다.",
+"name": "SendHTTPRequestCommand",
+"name_cn": "发送HTTP请求命令",
+"name_ja": "HTTPリクエスト送信",
+"name_kr": "HTTP Request 보내기",
+"pluginType": "command",
+"locale": "Resources/locale.json",
+"guid": "86854cea-798d-4240-ab8f-d36031f48249",
+"version": "12.0.2.0",
+"dependenceVersion": "12.0.2.0",
+"bundleJavaScript": true,
+"bundleCSS": true
+}
