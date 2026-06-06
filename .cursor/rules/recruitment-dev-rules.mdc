@@ -1,0 +1,40 @@
+---
+description: 招聘系统架构与开发约束（C/B/M 端共享、Workflow、异步匹配、集成测试）
+alwaysApply: true
+---
+
+# 招聘系统开发规则
+
+## 1. 状态流转必须经过 WorkflowService
+
+- **岗位状态**（`PositionStatus`）：`DRAFT → PENDING → PUBLISHED → CLOSED`，禁止在 Service 中直接 `position.setStatus(...)`，须调用 `WorkflowService.transitionPositionStatus()` 或新建时 `initializePositionAsDraft()`。
+- **申请阶段**（`ApplicationStage`）：所有阶段变更须调用 `WorkflowService.transitionApplicationStage(app, target, trigger)`，包括 AI 初试完成、安排面试、发 Offer、HR 手动推进。
+- 目标阶段须在该岗位的 `workflowSteps` 工作流中（`REJECTED` / `HIRED` 终端阶段除外）。
+
+## 2. C / B / M 端共享一套数据模型
+
+- 实体层仅维护 `entity/` 下 JPA 实体（如 `Application`、`Position`、`Interview`）。
+- C 端、B 端、M 端通过 **同一套 DTO**（如 `ApplicationResponse`）读写，禁止为某一端单独复制实体或持久化表。
+- 端差异仅体现在 Controller 权限与 UI，不体现在数据模型分叉。
+
+## 3. 新功能必须附带集成测试
+
+- 每个新功能 PR 须增加或扩展 `backend/src/test/java/com/recruitment/` 下的集成测试。
+- 测试须验证该功能在 **完整业务流** 中的位置，例如：投递 → 异步 matchScore → 初筛 → AI 初试 → 业务面 → Offer。
+- 参考：`RecruitmentWorkflowIntegrationTest.java`。
+
+## 4. matchScore 必须异步计算
+
+- **禁止**在 `GET` 查询、列表、人才库匹配等读路径调用 `AiMatchingService.analyze()` 写入或返回投递 matchScore。
+- 投递（`apply` / `applyWithResume`）完成后，仅通过 `MatchScoreAsyncService.calculateAfterApply(applicationId)` 异步触发 LLM/规则匹配。
+- 同步投递响应中 `matchScore` 应为 `null`，`matchScorePending=true`；前端可展示「匹配计算中」。
+- 简历预览（未投递）可用 `analyzeRulesOnly` 做规则估算，不得对 Top N 岗位做 LLM 实时精算。
+
+## 5. 关键类索引
+
+| 职责 | 类 |
+|------|-----|
+| 阶段/状态流转 | `WorkflowService` |
+| 异步匹配分 | `MatchScoreAsyncService` |
+| 投递入口 | `ApplicationService.apply*` |
+| 集成测试 | `RecruitmentWorkflowIntegrationTest` |
