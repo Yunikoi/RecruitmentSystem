@@ -7,6 +7,7 @@
         <template v-if="isLoggedIn">
           <!-- C端 -->
           <template v-if="isCandidate">
+            <el-menu-item index="/candidate/resume-analysis">简历分析</el-menu-item>
             <el-menu-item index="/candidate/applications">我的投递</el-menu-item>
           </template>
           <!-- B端 HR -->
@@ -56,6 +57,7 @@ const isExecutive = computed(() => authState.user?.role === 'EXECUTIVE')
 const roleLabel = computed(() => getRoleLabel(authState.user?.role))
 
 const activeMenu = computed(() => {
+  if (route.path.startsWith('/candidate/resume-analysis')) return '/candidate/resume-analysis'
   if (route.path.startsWith('/candidate')) return '/candidate/applications'
   if (route.path.startsWith('/recruiter')) return '/recruiter/pipeline'
   if (route.path.startsWith('/management')) return '/management/dashboard'

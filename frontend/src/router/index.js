@@ -11,6 +11,7 @@ import PublicDetail from '../views/PublicDetail.vue'
 import Login from '../views/Login.vue'
 import CandidateApplications from '../views/candidate/CandidateApplications.vue'
 import CandidateApply from '../views/candidate/CandidateApply.vue'
+import ResumeAnalysis from '../views/candidate/ResumeAnalysis.vue'
 import RecruiterPipeline from '../views/recruiter/RecruiterPipeline.vue'
 import InterviewCollab from '../views/recruiter/InterviewCollab.vue'
 import ManagementDashboard from '../views/management/ManagementDashboard.vue'
@@ -22,6 +23,7 @@ const routes = [
   { path: '/public/:id', name: 'PublicDetail', component: PublicDetail, meta: { public: true } },
   // C端
   { path: '/candidate/applications', component: CandidateApplications, meta: { role: 'CANDIDATE' } },
+  { path: '/candidate/resume-analysis', component: ResumeAnalysis, meta: { role: 'CANDIDATE' } },
   { path: '/candidate/apply/:id', component: CandidateApply, meta: { role: 'CANDIDATE' } },
   // B端
   { path: '/recruiter/pipeline', component: RecruiterPipeline, meta: { role: ['ADMIN', 'INTERVIEWER'] } },

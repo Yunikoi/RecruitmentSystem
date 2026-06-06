@@ -9,6 +9,7 @@ import com.recruitment.service.CalendarBookingService;
 import com.recruitment.service.InterviewService;
 import com.recruitment.service.IntegrationService;
 import com.recruitment.service.MockInterviewService;
+import com.recruitment.service.ResumeAnalysisService;
 import com.recruitment.service.ResumeParseService;
 import jakarta.validation.Valid;
 import org.springframework.core.io.Resource;
@@ -26,6 +27,7 @@ public class CandidateController {
 
     private final ApplicationService applicationService;
     private final ResumeParseService resumeParseService;
+    private final ResumeAnalysisService resumeAnalysisService;
     private final InterviewService interviewService;
     private final MockInterviewService mockInterviewService;
     private final CalendarBookingService calendarBookingService;
@@ -34,6 +36,7 @@ public class CandidateController {
 
     public CandidateController(ApplicationService applicationService,
                                ResumeParseService resumeParseService,
+                               ResumeAnalysisService resumeAnalysisService,
                                InterviewService interviewService,
                                MockInterviewService mockInterviewService,
                                CalendarBookingService calendarBookingService,
@@ -41,6 +44,7 @@ public class CandidateController {
                                AiInterviewService aiInterviewService) {
         this.applicationService = applicationService;
         this.resumeParseService = resumeParseService;
+        this.resumeAnalysisService = resumeAnalysisService;
         this.interviewService = interviewService;
         this.mockInterviewService = mockInterviewService;
         this.calendarBookingService = calendarBookingService;
@@ -64,6 +68,16 @@ public class CandidateController {
     @PostMapping("/resume/parse")
     public ApiResponse<ParsedResumeResponse> parseResume(@RequestParam("file") MultipartFile file) throws Exception {
         return ApiResponse.success(resumeParseService.parseFile(file));
+    }
+
+    @PostMapping("/resume/analyze")
+    public ApiResponse<ResumeAnalysisResponse> analyzeResume(@RequestParam("file") MultipartFile file) throws Exception {
+        return ApiResponse.success(resumeAnalysisService.analyzeFile(file));
+    }
+
+    @PostMapping("/resume/analyze-text")
+    public ApiResponse<ResumeAnalysisResponse> analyzeResumeText(@RequestBody ResumeAnalyzeTextRequest body) {
+        return ApiResponse.success(resumeAnalysisService.analyzeText(body.getText()));
     }
 
     @GetMapping("/applications")

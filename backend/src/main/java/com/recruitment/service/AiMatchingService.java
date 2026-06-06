@@ -31,6 +31,11 @@ public class AiMatchingService {
         return analyzeWithRules(position, resumeText, parsedSkills);
     }
 
+    /** 批量岗位匹配时使用，避免对每个岗位单独调用 LLM。 */
+    public MatchResult analyzeRulesOnly(Position position, String resumeText, String parsedSkills) {
+        return analyzeWithRules(position, resumeText, parsedSkills);
+    }
+
     public String generateRejectionFeedback(String candidateName, String highlights, List<String> altPositions) {
         String ai = generateRejectionWithLlm(candidateName, highlights, altPositions);
         if (ai != null && !ai.isBlank()) {

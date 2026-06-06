@@ -18,6 +18,16 @@ export function parseResume(file) {
   return request.post('/candidate/resume/parse', form)
 }
 
+export function analyzeResume(file) {
+  const form = new FormData()
+  form.append('file', file)
+  return request.post('/candidate/resume/analyze', form, { timeout: 120000 })
+}
+
+export function analyzeResumeText(text) {
+  return request.post('/candidate/resume/analyze-text', { text }, { timeout: 120000 })
+}
+
 export function getMyApplications() {
   return request.get('/candidate/applications')
 }

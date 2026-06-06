@@ -2,7 +2,10 @@
   <div class="page-card">
     <h2 class="title">互联网热招岗位</h2>
     <p class="subtitle">AI 智能匹配 · 一键投递 · 进度全透明</p>
-    <el-button v-if="!isLoggedIn" type="primary" link @click="$router.push('/login')">登录投递 →</el-button>
+    <div class="top-actions">
+      <el-button v-if="isCandidate" type="success" @click="$router.push('/candidate/resume-analysis')">AI 简历分析 · 智能匹配岗位</el-button>
+      <el-button v-if="!isLoggedIn" type="primary" link @click="$router.push('/login')">登录投递 →</el-button>
+    </div>
 
     <el-form :inline="true" :model="query" style="margin-bottom: 20px">
       <el-form-item label="岗位名称">
@@ -74,7 +77,8 @@ onMounted(loadData)
 
 <style scoped>
 .title { margin-bottom: 8px; }
-.subtitle { color: #909399; margin-bottom: 20px; }
+.subtitle { color: #909399; margin-bottom: 12px; }
+.top-actions { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
 .job-card h3 { margin-bottom: 12px; }
 .desc {
   color: #606266; line-height: 1.6; height: 72px; overflow: hidden;
