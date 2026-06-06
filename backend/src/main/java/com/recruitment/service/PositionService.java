@@ -89,7 +89,7 @@ public class PositionService {
         Position position = new Position();
         position.setTitle(request.getTitle().trim());
         position.setDescription(request.getDescription().trim());
-        workflowService.transitionPositionStatus(position, PositionStatus.DRAFT);
+        workflowService.initializePositionAsDraft(position);
         position.setCreatedById(user.getUserId());
         position.setCreatedByName(user.getDisplayName());
         position.setDepartment(user.getDepartment());
@@ -259,7 +259,7 @@ public class PositionService {
                 Position position = new Position();
                 position.setTitle(title.trim());
                 position.setDescription(description.trim());
-                workflowService.transitionPositionStatus(position, PositionStatus.DRAFT);
+                workflowService.initializePositionAsDraft(position);
                 position.setCreatedById(user.getUserId());
                 position.setCreatedByName(user.getDisplayName());
                 position.setDepartment(user.getDepartment());

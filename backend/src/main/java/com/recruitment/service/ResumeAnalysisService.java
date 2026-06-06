@@ -109,33 +109,12 @@ public class ResumeAnalysisService {
                 b.getMatchScore() != null ? b.getMatchScore() : 0,
                 a.getMatchScore() != null ? a.getMatchScore() : 0));
 
-        if (useLlmForTop && !items.isEmpty()) {
-            refineTopMatchesWithLlm(items, resumeText, positions);
-        }
-
         return items;
     }
 
+    /** 简历预览场景：仅规则匹配，禁止查询时 LLM 实时计算 matchScore */
     private void refineTopMatchesWithLlm(List<PositionMatchDto> items, String resumeText, List<Position> positions) {
-        int limit = Math.min(3, items.size());
-        Map<Long, Position> positionMap = positions.stream()
-                .collect(Collectors.toMap(Position::getId, p -> p, (a, b) -> a));
-
-        for (int i = 0; i < limit; i++) {
-            PositionMatchDto item = items.get(i);
-            Position position = positionMap.get(item.getPositionId());
-            if (position == null) {
-                continue;
-            }
-            AiMatchingService.MatchResult refined = aiMatchingService.analyze(position, resumeText, "");
-            item.setMatchScore(refined.score());
-            item.setHighlights(refined.highlights());
-            item.setRisks(refined.risks());
-            item.setRecommendation(recommendLevel(refined.score()));
-        }
-        items.sort((a, b) -> Integer.compare(
-                b.getMatchScore() != null ? b.getMatchScore() : 0,
-                a.getMatchScore() != null ? a.getMatchScore() : 0));
+        // disabled per architecture rule: matchScore LLM only on async apply path
     }
 
     private DeepAnalysis analyzeDeepWithLlm(String resumeText, ParsedResumeResponse parsed) {

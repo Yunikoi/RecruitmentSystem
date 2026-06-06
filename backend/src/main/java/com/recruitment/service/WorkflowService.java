@@ -74,6 +74,12 @@ public class WorkflowService {
         return steps;
     }
 
+    /** 新建岗位时的初始状态（非流转） */
+    public Position initializePositionAsDraft(Position position) {
+        position.setStatus(PositionStatus.DRAFT);
+        return position;
+    }
+
     /** 岗位状态流转（PositionStatus） */
     public Position transitionPositionStatus(Position position, PositionStatus target) {
         PositionStatus current = position.getStatus();

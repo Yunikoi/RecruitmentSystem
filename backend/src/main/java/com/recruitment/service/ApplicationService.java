@@ -314,6 +314,7 @@ public class ApplicationService {
         r.setChannel(app.getChannel());
         r.setChannelLabel(channelLabel(app.getChannel()));
         r.setMatchScore(app.getMatchScore());
+        r.setMatchScorePending(app.getMatchScore() == null);
         r.setMatchHighlights(app.getMatchHighlights());
         r.setMatchRisks(app.getMatchRisks());
         r.setResumeText(app.getResumeText());

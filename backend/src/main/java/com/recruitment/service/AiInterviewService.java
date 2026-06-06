@@ -26,15 +26,18 @@ public class AiInterviewService {
     private final PositionRepository positionRepository;
     private final AiMatchingService aiMatchingService;
     private final ComplianceService complianceService;
+    private final WorkflowService workflowService;
 
     public AiInterviewService(ApplicationRepository applicationRepository,
                               PositionRepository positionRepository,
                               AiMatchingService aiMatchingService,
-                              ComplianceService complianceService) {
+                              ComplianceService complianceService,
+                              WorkflowService workflowService) {
         this.applicationRepository = applicationRepository;
         this.positionRepository = positionRepository;
         this.aiMatchingService = aiMatchingService;
         this.complianceService = complianceService;
+        this.workflowService = workflowService;
     }
 
     public AiInterviewStartResponse start(Long applicationId) {
@@ -111,8 +114,7 @@ public class AiInterviewService {
             app.setAiInterviewPass(score >= 60);
             app.setAiInterviewAt(LocalDateTime.now());
             if (app.getStage() == ApplicationStage.SCREENING) {
-                app.setStage(ApplicationStage.AI_INTERVIEW);
-                app.setStageUpdatedAt(LocalDateTime.now());
+                workflowService.transitionApplicationStage(app, ApplicationStage.AI_INTERVIEW, "AI_INTERVIEW_FINISH");
             }
             applicationRepository.save(app);
             sessions.remove(request.getSessionId());

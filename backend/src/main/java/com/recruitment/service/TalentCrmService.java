@@ -17,41 +17,64 @@ public class TalentCrmService {
 
     private final ApplicationRepository applicationRepository;
     private final PositionRepository positionRepository;
-    private final AiMatchingService aiMatchingService;
     private final ComplianceService complianceService;
 
     public TalentCrmService(ApplicationRepository applicationRepository,
                             PositionRepository positionRepository,
-                            AiMatchingService aiMatchingService,
                             ComplianceService complianceService) {
         this.applicationRepository = applicationRepository;
         this.positionRepository = positionRepository;
-        this.aiMatchingService = aiMatchingService;
         this.complianceService = complianceService;
     }
 
+    /**
+     * 人才库匹配：仅使用已持久化的 matchScore，禁止查询时实时调用 LLM 计算。
+     */
     public List<TalentMatchItem> matchTalentPool(Long positionId) {
         UserContextHolder.require();
         Position position = positionRepository.findById(positionId)
                 .orElseThrow(() -> new BusinessException(404, "岗位不存在"));
         return applicationRepository.findByInTalentPoolTrueOrderByMatchScoreDesc().stream()
-                .map(app -> {
-                    AiMatchingService.MatchResult match = aiMatchingService.analyze(
-                            position, app.getResumeText(), app.getParsedSkills());
-                    TalentMatchItem item = new TalentMatchItem();
-                    item.setApplicationId(app.getId());
-                    item.setCandidateName(app.getCandidateName());
-                    item.setSkills(app.getParsedSkills());
-                    item.setPreviousScore(app.getMatchScore());
-                    item.setMatchScore(match.score());
-                    item.setHighlights(match.highlights());
-                    item.setSilverMedal(app.getStage() == ApplicationStage.REJECTED);
-                    return item;
-                })
-                .filter(i -> i.getMatchScore() >= 75)
+                .map(app -> toTalentMatchItem(app, position))
+                .filter(i -> i.getMatchScore() != null && i.getMatchScore() >= 75)
                 .sorted(Comparator.comparingInt(TalentMatchItem::getMatchScore).reversed())
                 .limit(10)
                 .collect(Collectors.toList());
+    }
+
+    private TalentMatchItem toTalentMatchItem(Application app, Position targetPosition) {
+        int crossScore = estimateCrossPositionScore(app, targetPosition);
+        TalentMatchItem item = new TalentMatchItem();
+        item.setApplicationId(app.getId());
+        item.setCandidateName(app.getCandidateName());
+        item.setSkills(app.getParsedSkills());
+        item.setPreviousScore(app.getMatchScore());
+        item.setMatchScore(crossScore);
+        item.setHighlights(app.getMatchHighlights() != null ? app.getMatchHighlights()
+                : "基于历史投递匹配分与技能标签估算");
+        item.setSilverMedal(app.getStage() == ApplicationStage.REJECTED);
+        return item;
+    }
+
+    /** 规则估算跨岗匹配，不触发 LLM */
+    private int estimateCrossPositionScore(Application app, Position position) {
+        if (app.getMatchScore() == null) {
+            return 0;
+        }
+        int base = app.getMatchScore();
+        String skills = (app.getParsedSkills() != null ? app.getParsedSkills() : "").toLowerCase();
+        String tags = (position.getSkillTags() != null ? position.getSkillTags() : "").toLowerCase();
+        if (tags.isBlank()) {
+            return base;
+        }
+        long hit = Arrays.stream(tags.split("[,，、/\\s]+"))
+                .map(String::trim)
+                .filter(t -> !t.isEmpty())
+                .filter(skills::contains)
+                .count();
+        long total = Arrays.stream(tags.split("[,，、/\\s]+")).filter(s -> !s.isBlank()).count();
+        int bonus = total > 0 ? (int) (hit * 15 / total) : 0;
+        return Math.min(99, base / 2 + bonus);
     }
 
     @Transactional

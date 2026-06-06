@@ -22,6 +22,7 @@ public class ApplicationResponse {
     private ChannelType channel;
     private String channelLabel;
     private Integer matchScore;
+    private Boolean matchScorePending;
     private String matchHighlights;
     private String matchRisks;
     private String resumeText;

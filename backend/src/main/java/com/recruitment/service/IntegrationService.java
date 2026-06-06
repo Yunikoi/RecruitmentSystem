@@ -21,17 +21,20 @@ public class IntegrationService {
     private final ApplicationRepository applicationRepository;
     private final ComplianceService complianceService;
     private final AiMatchingService aiMatchingService;
+    private final WorkflowService workflowService;
 
     public IntegrationService(OfferRecordRepository offerRepository,
                               BackgroundCheckRecordRepository bgRepository,
                               ApplicationRepository applicationRepository,
                               ComplianceService complianceService,
-                              AiMatchingService aiMatchingService) {
+                              AiMatchingService aiMatchingService,
+                              WorkflowService workflowService) {
         this.offerRepository = offerRepository;
         this.bgRepository = bgRepository;
         this.applicationRepository = applicationRepository;
         this.complianceService = complianceService;
         this.aiMatchingService = aiMatchingService;
+        this.workflowService = workflowService;
     }
 
     @Transactional
@@ -43,8 +46,7 @@ public class IntegrationService {
         offer.setApplicationId(applicationId);
         offer.setStatus("PENDING_SIGN");
         offer = offerRepository.save(offer);
-        app.setStage(ApplicationStage.OFFER);
-        app.setStageUpdatedAt(LocalDateTime.now());
+        workflowService.transitionApplicationStage(app, ApplicationStage.OFFER, "CREATE_OFFER");
         applicationRepository.save(app);
         complianceService.log("CREATE_OFFER", "Application", applicationId, "发起电子签 Offer");
         return toOfferResponse(offer);
