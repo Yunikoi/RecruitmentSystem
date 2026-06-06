@@ -65,6 +65,18 @@ public class Application {
     @Column(columnDefinition = "TEXT")
     private String aiFeedback;
 
+    /** AI 语音初试得分 0-100 */
+    private Integer aiInterviewScore;
+
+    /** AI 语音初试综合点评（HR 可见） */
+    @Column(columnDefinition = "TEXT")
+    private String aiInterviewFeedback;
+
+    /** AI 是否建议进入下一轮 */
+    private Boolean aiInterviewPass;
+
+    private LocalDateTime aiInterviewAt;
+
     @Column(columnDefinition = "TEXT")
     private String recommendedPositions;
 

@@ -9,6 +9,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Configuration
 @ConditionalOnProperty(name = "app.seed-demo-data", havingValue = "true")
@@ -29,104 +34,151 @@ public class DataInitializer {
             User interviewer = createUser(userRepository, authService, "interviewer", "interview123", "李面试官", "技术部", UserRole.INTERVIEWER);
             User executive = createUser(userRepository, authService, "executive", "exec123", "王总监", "管理层", UserRole.EXECUTIVE);
 
-            if (positionRepository.count() > 0) return;
+            Map<String, User> deptUsers = Map.of(
+                    "技术部", deptTech,
+                    "人事部", deptHr,
+                    "产品部", deptTech,
+                    "运营部", deptHr,
+                    "市场部", deptHr,
+                    "财务部", deptHr
+            );
 
-            Position p1 = createPosition("Java后端开发工程师", "岗位职责：负责高并发后端服务；任职要求：Java/Spring/微服务；加分项：开源贡献", PositionStatus.PUBLISHED, deptTech, admin);
-            Position p2 = createPosition("前端开发工程师", "岗位职责：Web前端开发；任职要求：Vue/React/TypeScript；加分项：组件库经验", PositionStatus.PUBLISHED, deptTech, admin);
-            Position p3 = createPosition("产品经理", "岗位职责：需求分析与产品设计；任职要求：互联网产品经验；加分项：数据驱动", PositionStatus.PENDING, deptHr, null);
-            positionRepository.save(p1);
-            positionRepository.save(p2);
-            positionRepository.save(p3);
+            boolean freshDb = positionRepository.count() == 0;
+            List<Position> positions = seedPositions(positionRepository, admin, deptUsers);
 
-            Application demo = new Application();
-            demo.setPositionId(p1.getId());
-            demo.setCandidateId(candidate.getId());
-            demo.setCandidateName("张同学");
-            demo.setCandidateEmail("zhang@example.com");
-            demo.setCandidatePhone("13800138000");
-            demo.setStage(ApplicationStage.BUSINESS_INTERVIEW);
-            demo.setChannel(ChannelType.OFFICIAL);
-            demo.setResumeText("Java Spring Boot 微服务 3年经验");
-            demo.setParsedSkills("Java、Spring Boot、MySQL");
-            demo.setMatchScore(88);
-            demo.setMatchHighlights("核心匹配：Java、Spring、微服务");
-            demo.setMatchRisks("");
-            demo.setStageUpdatedAt(LocalDateTime.now());
-            applicationRepository.save(demo);
-
-            // 第二条投递：前端岗 · 初筛阶段，用于演示模拟面试 + 待确认邀请 + 多 Job 隔离
-            Application demo2 = new Application();
-            demo2.setPositionId(p2.getId());
-            demo2.setCandidateId(candidate.getId());
-            demo2.setCandidateName("张同学");
-            demo2.setCandidateEmail("zhang@example.com");
-            demo2.setCandidatePhone("13800138000");
-            demo2.setStage(ApplicationStage.SCREENING);
-            demo2.setChannel(ChannelType.OFFICIAL);
-            demo2.setResumeText("Vue React TypeScript 2年经验");
-            demo2.setParsedSkills("Vue、React、TypeScript");
-            demo2.setMatchScore(82);
-            demo2.setMatchHighlights("熟悉 Vue 生态");
-            demo2.setMatchRisks("React 经验略少");
-            demo2.setStageUpdatedAt(LocalDateTime.now());
-            applicationRepository.save(demo2);
-
-            Interview pendingInvite = new Interview();
-            pendingInvite.setApplicationId(demo2.getId());
-            pendingInvite.setInterviewerId(interviewer.getId());
-            pendingInvite.setInterviewerName(interviewer.getDisplayName());
-            pendingInvite.setType("BUSINESS");
-            pendingInvite.setScheduledAt(LocalDateTime.now().plusDays(5).withHour(15).withMinute(0));
-            pendingInvite.setLocation("3号会议室 / 线上腾讯会议");
-            pendingInvite.setStatus("PENDING");
-            pendingInvite.setInvitedById(admin.getId());
-            pendingInvite.setInvitedByName(admin.getDisplayName());
-            pendingInvite.setExpireAt(LocalDateTime.now().plusDays(3));
-            interviewRepository.save(pendingInvite);
-
-            Interview scheduled = new Interview();
-            scheduled.setApplicationId(demo.getId());
-            scheduled.setInterviewerId(interviewer.getId());
-            scheduled.setInterviewerName(interviewer.getDisplayName());
-            scheduled.setType("BUSINESS");
-            scheduled.setScheduledAt(LocalDateTime.now().plusDays(2));
-            scheduled.setLocation("线上 · 腾讯会议 https://meeting.tencent.com/demo");
-            scheduled.setStatus("PENDING");
-            scheduled.setInvitedById(admin.getId());
-            scheduled.setInvitedByName(admin.getDisplayName());
-            scheduled.setExpireAt(LocalDateTime.now().plusDays(3));
-            interviewRepository.save(scheduled);
-
-            InterviewSlot slot1 = new InterviewSlot();
-            slot1.setInterviewerId(interviewer.getId());
-            slot1.setInterviewerName(interviewer.getDisplayName());
-            slot1.setPositionId(p1.getId());
-            slot1.setStartTime(LocalDateTime.now().plusDays(3).withHour(10).withMinute(0));
-            slot1.setEndTime(LocalDateTime.now().plusDays(3).withHour(11).withMinute(0));
-            slot1.setBooked(false);
-            InterviewSlot slot2 = new InterviewSlot();
-            slot2.setInterviewerId(interviewer.getId());
-            slot2.setInterviewerName(interviewer.getDisplayName());
-            slot2.setPositionId(p1.getId());
-            slot2.setStartTime(LocalDateTime.now().plusDays(4).withHour(14).withMinute(0));
-            slot2.setEndTime(LocalDateTime.now().plusDays(4).withHour(15).withMinute(0));
-            slot2.setBooked(false);
-            interviewSlotRepository.save(slot1);
-            interviewSlotRepository.save(slot2);
-
-            InterviewSlot slot3 = new InterviewSlot();
-            slot3.setInterviewerId(interviewer.getId());
-            slot3.setInterviewerName(interviewer.getDisplayName());
-            slot3.setPositionId(p2.getId());
-            slot3.setStartTime(LocalDateTime.now().plusDays(6).withHour(10).withMinute(0));
-            slot3.setEndTime(LocalDateTime.now().plusDays(6).withHour(11).withMinute(0));
-            slot3.setBooked(false);
-            interviewSlotRepository.save(slot3);
-
-            p1.setPositionType("TECH");
-            p1.setSkillTags("Java,Spring Boot,微服务");
-            positionRepository.save(p1);
+            if (freshDb && !positions.isEmpty()) {
+                seedDemoApplications(applicationRepository, interviewRepository, interviewSlotRepository,
+                        candidate, interviewer, admin, positions);
+            }
         };
+    }
+
+    private List<Position> seedPositions(PositionRepository positionRepository, User admin,
+                                         Map<String, User> deptUsers) {
+        Map<String, Position> existingByTitle = positionRepository.findAll().stream()
+                .collect(Collectors.toMap(Position::getTitle, Function.identity(), (a, b) -> a));
+
+        List<Position> result = new ArrayList<>();
+        for (DemoPositionSeeds.Seed seed : DemoPositionSeeds.all()) {
+            if (existingByTitle.containsKey(seed.title())) {
+                result.add(existingByTitle.get(seed.title()));
+                continue;
+            }
+            User creator = deptUsers.getOrDefault(seed.department(), admin);
+            User approver = seed.status() == PositionStatus.PUBLISHED ? admin : null;
+            Position p = createPosition(seed.title(), seed.description(), seed.status(), creator, approver);
+            p.setDepartment(seed.department());
+            p.setPositionType(seed.positionType());
+            p.setSkillTags(seed.skillTags());
+            Position saved = positionRepository.save(p);
+            existingByTitle.put(seed.title(), saved);
+            result.add(saved);
+        }
+
+        return result;
+    }
+
+    private void seedDemoApplications(ApplicationRepository applicationRepository,
+                                      InterviewRepository interviewRepository,
+                                      InterviewSlotRepository interviewSlotRepository,
+                                      User candidate, User interviewer, User admin,
+                                      List<Position> positions) {
+        Position javaPos = findByTitle(positions, "Java后端开发工程师");
+        Position fePos = findByTitle(positions, "前端开发工程师");
+        if (javaPos == null || fePos == null) {
+            return;
+        }
+
+        Application demo = new Application();
+        demo.setPositionId(javaPos.getId());
+        demo.setCandidateId(candidate.getId());
+        demo.setCandidateName("张同学");
+        demo.setCandidateEmail("zhang@example.com");
+        demo.setCandidatePhone("13800138000");
+        demo.setStage(ApplicationStage.BUSINESS_INTERVIEW);
+        demo.setChannel(ChannelType.OFFICIAL);
+        demo.setResumeText("Java Spring Boot 微服务 3年经验");
+        demo.setParsedSkills("Java、Spring Boot、MySQL");
+        demo.setMatchScore(88);
+        demo.setMatchHighlights("核心匹配：Java、Spring、微服务");
+        demo.setMatchRisks("");
+        demo.setStageUpdatedAt(LocalDateTime.now());
+        applicationRepository.save(demo);
+
+        Application demo2 = new Application();
+        demo2.setPositionId(fePos.getId());
+        demo2.setCandidateId(candidate.getId());
+        demo2.setCandidateName("张同学");
+        demo2.setCandidateEmail("zhang@example.com");
+        demo2.setCandidatePhone("13800138000");
+        demo2.setStage(ApplicationStage.SCREENING);
+        demo2.setChannel(ChannelType.OFFICIAL);
+        demo2.setResumeText("Vue React TypeScript 2年经验");
+        demo2.setParsedSkills("Vue、React、TypeScript");
+        demo2.setMatchScore(82);
+        demo2.setMatchHighlights("熟悉 Vue 生态");
+        demo2.setMatchRisks("React 经验略少");
+        demo2.setStageUpdatedAt(LocalDateTime.now());
+        applicationRepository.save(demo2);
+
+        Interview pendingInvite = new Interview();
+        pendingInvite.setApplicationId(demo2.getId());
+        pendingInvite.setInterviewerId(interviewer.getId());
+        pendingInvite.setInterviewerName(interviewer.getDisplayName());
+        pendingInvite.setType("BUSINESS");
+        pendingInvite.setScheduledAt(LocalDateTime.now().plusDays(5).withHour(15).withMinute(0));
+        pendingInvite.setLocation("3号会议室 / 线上腾讯会议");
+        pendingInvite.setStatus("PENDING");
+        pendingInvite.setInvitedById(admin.getId());
+        pendingInvite.setInvitedByName(admin.getDisplayName());
+        pendingInvite.setExpireAt(LocalDateTime.now().plusDays(3));
+        interviewRepository.save(pendingInvite);
+
+        Interview scheduled = new Interview();
+        scheduled.setApplicationId(demo.getId());
+        scheduled.setInterviewerId(interviewer.getId());
+        scheduled.setInterviewerName(interviewer.getDisplayName());
+        scheduled.setType("BUSINESS");
+        scheduled.setScheduledAt(LocalDateTime.now().plusDays(2));
+        scheduled.setLocation("线上 · 腾讯会议 https://meeting.tencent.com/demo");
+        scheduled.setStatus("PENDING");
+        scheduled.setInvitedById(admin.getId());
+        scheduled.setInvitedByName(admin.getDisplayName());
+        scheduled.setExpireAt(LocalDateTime.now().plusDays(3));
+        interviewRepository.save(scheduled);
+
+        InterviewSlot slot1 = new InterviewSlot();
+        slot1.setInterviewerId(interviewer.getId());
+        slot1.setInterviewerName(interviewer.getDisplayName());
+        slot1.setPositionId(javaPos.getId());
+        slot1.setStartTime(LocalDateTime.now().plusDays(3).withHour(10).withMinute(0));
+        slot1.setEndTime(LocalDateTime.now().plusDays(3).withHour(11).withMinute(0));
+        slot1.setBooked(false);
+        InterviewSlot slot2 = new InterviewSlot();
+        slot2.setInterviewerId(interviewer.getId());
+        slot2.setInterviewerName(interviewer.getDisplayName());
+        slot2.setPositionId(javaPos.getId());
+        slot2.setStartTime(LocalDateTime.now().plusDays(4).withHour(14).withMinute(0));
+        slot2.setEndTime(LocalDateTime.now().plusDays(4).withHour(15).withMinute(0));
+        slot2.setBooked(false);
+        interviewSlotRepository.save(slot1);
+        interviewSlotRepository.save(slot2);
+
+        InterviewSlot slot3 = new InterviewSlot();
+        slot3.setInterviewerId(interviewer.getId());
+        slot3.setInterviewerName(interviewer.getDisplayName());
+        slot3.setPositionId(fePos.getId());
+        slot3.setStartTime(LocalDateTime.now().plusDays(6).withHour(10).withMinute(0));
+        slot3.setEndTime(LocalDateTime.now().plusDays(6).withHour(11).withMinute(0));
+        slot3.setBooked(false);
+        interviewSlotRepository.save(slot3);
+    }
+
+    private Position findByTitle(List<Position> positions, String title) {
+        return positions.stream()
+                .filter(p -> title.equals(p.getTitle()))
+                .findFirst()
+                .orElse(null);
     }
 
     private User createUser(UserRepository repo, AuthService auth, String username, String password,

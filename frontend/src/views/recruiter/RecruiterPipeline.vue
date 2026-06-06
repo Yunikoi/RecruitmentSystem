@@ -49,6 +49,17 @@
         </template>
       </el-table-column>
       <el-table-column prop="matchHighlights" label="亮点" min-width="160" show-overflow-tooltip />
+      <el-table-column label="AI初试" min-width="140">
+        <template #default="{ row }">
+          <template v-if="row.aiInterviewScore != null">
+            <el-tag :type="row.aiInterviewPass ? 'success' : 'danger'" size="small">
+              {{ row.aiInterviewScore }} 分 · {{ row.aiInterviewPass ? '建议通过' : '不建议' }}
+            </el-tag>
+            <el-button link type="primary" @click="openAiFeedback(row)">查看面评</el-button>
+          </template>
+          <span v-else class="muted">未完成</span>
+        </template>
+      </el-table-column>
       <el-table-column prop="matchRisks" label="风险" min-width="120" show-overflow-tooltip />
       <el-table-column prop="stageLabel" label="阶段" width="100">
         <template #default="{ row }"><el-tag>{{ row.stageLabel }}</el-tag></template>
@@ -177,6 +188,12 @@
           <el-tag type="success">{{ resumeRow?.matchScore }}%</el-tag>
           {{ resumeRow?.matchHighlights }}
         </el-descriptions-item>
+        <el-descriptions-item v-if="resumeRow?.aiInterviewScore != null" label="AI初试" :span="2">
+          <el-tag :type="resumeRow.aiInterviewPass ? 'success' : 'danger'">
+            {{ resumeRow.aiInterviewScore }} 分 · {{ resumeRow.aiInterviewPass ? '建议进入下一轮' : '不建议进入下一轮' }}
+          </el-tag>
+          <p class="ai-feedback-preview">{{ resumeRow.aiInterviewFeedback }}</p>
+        </el-descriptions-item>
       </el-descriptions>
 
       <div v-if="resumeRow?.hasResumeFile" class="resume-actions">
@@ -191,6 +208,22 @@
         <pre v-if="resumeRow?.resumeText">{{ resumeRow.resumeText }}</pre>
         <el-empty v-else description="暂无简历文本" />
       </div>
+    </el-dialog>
+
+    <el-dialog v-model="aiFeedbackVisible" title="AI 初试面评" width="560px">
+      <p class="eval-target">{{ aiFeedbackRow?.candidateName }} · {{ aiFeedbackRow?.positionTitle }}</p>
+      <div v-if="aiFeedbackRow?.aiInterviewScore != null" class="ai-feedback-panel">
+        <div class="ai-feedback-head">
+          <el-tag :type="aiFeedbackRow.aiInterviewPass ? 'success' : 'danger'" size="large">
+            得分 {{ aiFeedbackRow.aiInterviewScore }} · {{ aiFeedbackRow.aiInterviewPass ? '建议进入下一轮' : '不建议进入下一轮' }}
+          </el-tag>
+          <span v-if="aiFeedbackRow.aiInterviewAt" class="muted">
+            {{ formatTime(aiFeedbackRow.aiInterviewAt) }}
+          </span>
+        </div>
+        <pre class="ai-feedback-text">{{ aiFeedbackRow.aiInterviewFeedback }}</pre>
+      </div>
+      <el-empty v-else description="该候选人尚未完成 AI 初试" />
     </el-dialog>
   </div>
 </template>
@@ -230,6 +263,8 @@ const resumeLoading = ref(false)
 const resumeBlobUrl = ref('')
 const resumeBlob = ref(null)
 const isPdf = ref(false)
+const aiFeedbackVisible = ref(false)
+const aiFeedbackRow = ref(null)
 const currentRow = ref(null)
 const scheduleForm = reactive({ type: 'BUSINESS', interviewerId: '5', scheduledAt: '', location: '' })
 const blindHiring = ref(false)
@@ -339,6 +374,11 @@ const openResume = async (row) => {
   if (row.hasResumeFile) {
     await loadOriginalFile()
   }
+}
+
+const openAiFeedback = (row) => {
+  aiFeedbackRow.value = row
+  aiFeedbackVisible.value = true
 }
 
 const loadOriginalFile = async () => {
@@ -498,5 +538,33 @@ const startBgCheck = async () => {
   font-family: inherit;
   font-size: 14px;
   line-height: 1.6;
+}
+.ai-feedback-preview {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: #606266;
+  line-height: 1.6;
+}
+.ai-feedback-panel { margin-top: 8px; }
+.ai-feedback-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.ai-feedback-text {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #303133;
+  max-height: 360px;
+  overflow: auto;
 }
 </style>

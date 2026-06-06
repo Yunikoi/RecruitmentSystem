@@ -329,6 +329,10 @@ public class ApplicationService {
         r.setResumeContentType(app.getResumeContentType());
         r.setHasResumeFile(app.getResumeStoredName() != null && !app.getResumeStoredName().isBlank());
         r.setAiFeedback(app.getAiFeedback());
+        r.setAiInterviewScore(app.getAiInterviewScore());
+        r.setAiInterviewFeedback(app.getAiInterviewFeedback());
+        r.setAiInterviewPass(app.getAiInterviewPass());
+        r.setAiInterviewAt(app.getAiInterviewAt());
         r.setRecommendedPositions(app.getRecommendedPositions());
         r.setInTalentPool(app.getInTalentPool());
         r.setAppliedAt(app.getAppliedAt());

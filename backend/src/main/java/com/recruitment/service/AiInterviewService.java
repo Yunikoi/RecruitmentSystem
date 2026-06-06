@@ -106,13 +106,18 @@ public class AiInterviewService {
             res.setScore(score);
             res.setSummary(summary);
 
+            app.setAiInterviewScore(score);
+            app.setAiInterviewFeedback(summary);
+            app.setAiInterviewPass(score >= 60);
+            app.setAiInterviewAt(LocalDateTime.now());
             if (app.getStage() == ApplicationStage.SCREENING) {
                 app.setStage(ApplicationStage.AI_INTERVIEW);
                 app.setStageUpdatedAt(LocalDateTime.now());
-                applicationRepository.save(app);
             }
+            applicationRepository.save(app);
             sessions.remove(request.getSessionId());
-            complianceService.log("AI_INTERVIEW_FINISH", "Application", applicationId, "score=" + score);
+            complianceService.log("AI_INTERVIEW_FINISH", "Application", applicationId,
+                    "score=" + score + ", pass=" + (score >= 60) + ", summary=" + truncate(summary, 200));
             return res;
         }
 
@@ -133,6 +138,11 @@ public class AiInterviewService {
             throw new BusinessException(403, "无权访问");
         }
         return app;
+    }
+
+    private static String truncate(String text, int max) {
+        if (text == null) return "";
+        return text.length() <= max ? text : text.substring(0, max) + "...";
     }
 
     private static class Session {

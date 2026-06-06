@@ -30,6 +30,10 @@ public class ApplicationResponse {
     private String resumeContentType;
     private Boolean hasResumeFile;
     private String aiFeedback;
+    private Integer aiInterviewScore;
+    private String aiInterviewFeedback;
+    private Boolean aiInterviewPass;
+    private LocalDateTime aiInterviewAt;
     private String recommendedPositions;
     private Boolean inTalentPool;
     private LocalDateTime appliedAt;
