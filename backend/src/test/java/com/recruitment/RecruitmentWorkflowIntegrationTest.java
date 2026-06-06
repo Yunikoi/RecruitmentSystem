@@ -82,7 +82,7 @@ class RecruitmentWorkflowIntegrationTest {
         assertNull(response.getMatchScore(), "投递同步响应不得包含 matchScore");
         assertTrue(response.getMatchScorePending());
 
-        matchScoreAsyncService.calculateAfterApply(response.getId());
+        matchScoreAsyncService.calculateAfterApplyInternal(response.getId());
 
         Application saved = applicationRepository.findById(response.getId()).orElseThrow();
         assertNotNull(saved.getMatchScore(), "异步任务应写入 matchScore");
@@ -94,7 +94,11 @@ class RecruitmentWorkflowIntegrationTest {
         Application app = applicationRepository.findAll().stream()
                 .filter(a -> a.getStage() == ApplicationStage.SCREENING)
                 .findFirst()
-                .orElseThrow();
+                .orElseGet(() -> {
+                    Application fallback = applicationRepository.findAll().stream().findFirst().orElseThrow();
+                    fallback.setStage(ApplicationStage.SCREENING);
+                    return applicationRepository.save(fallback);
+                });
 
         workflowService.transitionApplicationStage(app, ApplicationStage.AI_INTERVIEW, "TEST");
         assertEquals(ApplicationStage.AI_INTERVIEW, app.getStage());

@@ -31,8 +31,12 @@ public class MatchScoreAsyncService {
 
     /** 投递完成后异步触发，禁止在查询接口中实时计算 matchScore。 */
     @Async("matchScoreExecutor")
-    @Transactional
     public void calculateAfterApply(Long applicationId) {
+        calculateAfterApplyInternal(applicationId);
+    }
+
+    @Transactional
+    public void calculateAfterApplyInternal(Long applicationId) {
         Application app = applicationRepository.findById(applicationId).orElse(null);
         if (app == null || app.getMatchScore() != null) {
             return;
