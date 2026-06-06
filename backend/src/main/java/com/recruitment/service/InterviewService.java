@@ -29,6 +29,7 @@ public class InterviewService {
     private final PositionRepository positionRepository;
     private final ComplianceService complianceService;
     private final AiMatchingService aiMatchingService;
+    private final WorkflowService workflowService;
 
     public InterviewService(InterviewRepository interviewRepository,
                             InterviewEvaluationRepository evaluationRepository,
@@ -36,7 +37,8 @@ public class InterviewService {
                             UserRepository userRepository,
                             PositionRepository positionRepository,
                             ComplianceService complianceService,
-                            AiMatchingService aiMatchingService) {
+                            AiMatchingService aiMatchingService,
+                            WorkflowService workflowService) {
         this.interviewRepository = interviewRepository;
         this.evaluationRepository = evaluationRepository;
         this.applicationRepository = applicationRepository;
@@ -44,6 +46,7 @@ public class InterviewService {
         this.positionRepository = positionRepository;
         this.complianceService = complianceService;
         this.aiMatchingService = aiMatchingService;
+        this.workflowService = workflowService;
     }
 
     @Transactional
@@ -76,14 +79,8 @@ public class InterviewService {
         interview.setInvitedByName(user.getDisplayName());
         interview.setExpireAt(LocalDateTime.now().plusDays(3));
 
-        ApplicationStage stage = switch (request.getType()) {
-            case "AI" -> ApplicationStage.AI_INTERVIEW;
-            case "BUSINESS" -> ApplicationStage.BUSINESS_INTERVIEW;
-            case "HR" -> ApplicationStage.HR_INTERVIEW;
-            default -> app.getStage();
-        };
-        app.setStage(stage);
-        app.setStageUpdatedAt(LocalDateTime.now());
+        ApplicationStage stage = workflowService.stageForInterviewType(request.getType());
+        workflowService.transitionApplicationStage(app, stage, "SCHEDULE_INTERVIEW");
         applicationRepository.save(app);
 
         complianceService.log("SCHEDULE_INTERVIEW", "Application", request.getApplicationId(), request.getType());

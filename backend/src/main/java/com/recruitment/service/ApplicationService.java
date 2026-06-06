@@ -27,6 +27,8 @@ public class ApplicationService {
     private final ResumeFileStorageService resumeFileStorageService;
     private final InterviewService interviewService;
     private final ComplianceService complianceService;
+    private final WorkflowService workflowService;
+    private final MatchScoreAsyncService matchScoreAsyncService;
 
     public ApplicationService(ApplicationRepository applicationRepository,
                               PositionRepository positionRepository,
@@ -35,7 +37,9 @@ public class ApplicationService {
                               AiMatchingService aiMatchingService,
                               ResumeFileStorageService resumeFileStorageService,
                               InterviewService interviewService,
-                              ComplianceService complianceService) {
+                              ComplianceService complianceService,
+                              WorkflowService workflowService,
+                              MatchScoreAsyncService matchScoreAsyncService) {
         this.applicationRepository = applicationRepository;
         this.positionRepository = positionRepository;
         this.userRepository = userRepository;
@@ -44,6 +48,8 @@ public class ApplicationService {
         this.resumeFileStorageService = resumeFileStorageService;
         this.interviewService = interviewService;
         this.complianceService = complianceService;
+        this.workflowService = workflowService;
+        this.matchScoreAsyncService = matchScoreAsyncService;
     }
 
     @Transactional
@@ -59,7 +65,6 @@ public class ApplicationService {
 
         String resumeText = request.getResumeText() != null ? request.getResumeText() : "";
         ParsedResumeResponse parsed = resumeParseService.parseText(resumeText);
-        AiMatchingService.MatchResult match = aiMatchingService.analyze(position, resumeText, parsed.getSkills());
 
         Application app = new Application();
         app.setPositionId(request.getPositionId());
@@ -70,17 +75,11 @@ public class ApplicationService {
         app.setChannel(request.getChannel() != null ? request.getChannel() : ChannelType.OFFICIAL);
         app.setResumeText(resumeText);
         app.setParsedSkills(parsed.getSkills());
-        app.setMatchScore(match.score());
-        app.setMatchHighlights(match.highlights());
-        app.setMatchRisks(match.risks());
-        app.setStage(ApplicationStage.APPLIED);
-        app.setStageUpdatedAt(LocalDateTime.now());
+        workflowService.transitionApplicationStage(app, ApplicationStage.APPLIED, "APPLY");
 
-        if (match.score() >= 75) {
-            app.setStage(ApplicationStage.SCREENING);
-        }
-
-        return toResponse(applicationRepository.save(app), position);
+        Application saved = applicationRepository.save(app);
+        matchScoreAsyncService.calculateAfterApply(saved.getId());
+        return toResponse(saved, position);
     }
 
     @Transactional
@@ -108,7 +107,6 @@ public class ApplicationService {
                 .ifPresent(a -> { throw new BusinessException(400, "您已投递过该岗位"); });
 
         String resumeText = req.getResumeText() != null ? req.getResumeText() : "";
-        AiMatchingService.MatchResult match = aiMatchingService.analyze(position, resumeText, parsed.getSkills());
 
         Application app = new Application();
         app.setPositionId(positionId);
@@ -122,15 +120,11 @@ public class ApplicationService {
         app.setResumeFileName(stored.originalName());
         app.setResumeStoredName(stored.storedName());
         app.setResumeContentType(stored.contentType());
-        app.setMatchScore(match.score());
-        app.setMatchHighlights(match.highlights());
-        app.setMatchRisks(match.risks());
-        app.setStage(ApplicationStage.APPLIED);
-        app.setStageUpdatedAt(LocalDateTime.now());
-        if (match.score() >= 75) {
-            app.setStage(ApplicationStage.SCREENING);
-        }
-        return toResponse(applicationRepository.save(app), position);
+        workflowService.transitionApplicationStage(app, ApplicationStage.APPLIED, "APPLY_UPLOAD");
+
+        Application saved = applicationRepository.save(app);
+        matchScoreAsyncService.calculateAfterApply(saved.getId());
+        return toResponse(saved, position);
     }
 
     public List<ApplicationResponse> myApplications() {
@@ -182,8 +176,7 @@ public class ApplicationService {
             throw new BusinessException(403, "仅HR可操作");
         }
         Application app = findById(id);
-        app.setStage(request.getStage());
-        app.setStageUpdatedAt(LocalDateTime.now());
+        workflowService.transitionApplicationStage(app, request.getStage(), "HR_ADVANCE");
 
         if (request.getStage() == ApplicationStage.REJECTED) {
             Position pos = positionRepository.findById(app.getPositionId()).orElse(null);

@@ -89,7 +89,7 @@ public class PositionService {
         Position position = new Position();
         position.setTitle(request.getTitle().trim());
         position.setDescription(request.getDescription().trim());
-        position.setStatus(PositionStatus.DRAFT);
+        workflowService.transitionPositionStatus(position, PositionStatus.DRAFT);
         position.setCreatedById(user.getUserId());
         position.setCreatedByName(user.getDisplayName());
         position.setDepartment(user.getDepartment());
@@ -139,7 +139,7 @@ public class PositionService {
         if (position.getStatus() != PositionStatus.DRAFT) {
             throw new BusinessException(400, "只有草稿状态的岗位可以提交审批");
         }
-        position.setStatus(PositionStatus.PENDING);
+        workflowService.transitionPositionStatus(position, PositionStatus.PENDING);
         return PositionMapper.toResponse(positionRepository.save(position));
     }
 
@@ -153,7 +153,7 @@ public class PositionService {
         if (position.getStatus() != PositionStatus.PENDING) {
             throw new BusinessException(400, "只有待审批状态的岗位可以审批");
         }
-        position.setStatus(PositionStatus.PUBLISHED);
+        workflowService.transitionPositionStatus(position, PositionStatus.PUBLISHED);
         position.setApprover(user.getDisplayName());
         position.setApprovalComment(request.getApprovalComment());
         position.setPublishedAt(LocalDateTime.now());
@@ -171,7 +171,7 @@ public class PositionService {
         if (position.getStatus() != PositionStatus.PENDING) {
             throw new BusinessException(400, "只有待审批状态的岗位可以驳回");
         }
-        position.setStatus(PositionStatus.DRAFT);
+        workflowService.transitionPositionStatus(position, PositionStatus.DRAFT);
         position.setApprover(user.getDisplayName());
         position.setApprovalComment(request.getApprovalComment());
         return PositionMapper.toResponse(positionRepository.save(position));
@@ -187,7 +187,7 @@ public class PositionService {
         if (position.getStatus() != PositionStatus.PUBLISHED) {
             throw new BusinessException(400, "只有已发布状态的岗位可以关闭");
         }
-        position.setStatus(PositionStatus.CLOSED);
+        workflowService.transitionPositionStatus(position, PositionStatus.CLOSED);
         return PositionMapper.toResponse(positionRepository.save(position));
     }
 
@@ -259,7 +259,7 @@ public class PositionService {
                 Position position = new Position();
                 position.setTitle(title.trim());
                 position.setDescription(description.trim());
-                position.setStatus(PositionStatus.DRAFT);
+                workflowService.transitionPositionStatus(position, PositionStatus.DRAFT);
                 position.setCreatedById(user.getUserId());
                 position.setCreatedByName(user.getDisplayName());
                 position.setDepartment(user.getDepartment());
